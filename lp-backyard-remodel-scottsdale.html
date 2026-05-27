@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backyard Remodel Scottsdale AZ | Free Design Consultation | Turfli</title>
+<meta name="description" content="Scottsdale's design-build outdoor living contractor. Complete backyard remodels with 3D renderings, paver patios, outdoor kitchens & turf. ROC licensed. Free consultation.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --copper:#b8742a;--copper-dark:#8a5218;--copper-light:#d4924c;
+  --charcoal:#1c1a17;--charcoal-mid:#2e2b25;
+  --stone:#d4c4a8;--stone-pale:#faf7f2;--border:#e2d8c8;
+  --white:#fff;--text-body:#4a4540;--text-muted:#7a7268;
+  --font-d:'Cormorant Garamond',Georgia,serif;
+  --font-b:'Jost',sans-serif;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--white);color:var(--text-body);line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+/* ── NAV ── */
+.lp-nav{background:var(--charcoal);padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.lp-logo{font-family:var(--font-d);font-size:1.5rem;font-weight:600;letter-spacing:.18em;color:#fff;text-transform:uppercase}
+.lp-logo span{display:block;font-size:.52rem;letter-spacing:.28em;color:var(--stone);font-weight:300;font-family:var(--font-b)}
+.lp-phone{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.8);font-size:.88rem}
+.lp-phone strong{color:var(--stone)}
+
+/* ── HERO FULL-BLEED ── */
+.hero{min-height:90vh;position:relative;display:flex;align-items:center;padding:5rem 2rem 4rem}
+.hero-bg{position:absolute;inset:0;background:
+  linear-gradient(135deg,rgba(20,18,15,.9) 0%,rgba(28,26,23,.7) 55%,rgba(46,43,37,.45) 100%),
+  url('fann-344-scaled-e1748393192373-2048x1334.jpg') center/cover no-repeat;z-index:0}
+.hero-inner{position:relative;z-index:1;max-width:1150px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}
+.hero-eyebrow{font-size:.68rem;letter-spacing:.36em;text-transform:uppercase;color:var(--copper-light);font-weight:500;margin-bottom:1.25rem;display:flex;align-items:center;gap:.85rem}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--copper)}
+.hero h1{font-family:var(--font-d);font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:300;line-height:1.1;color:#fff;margin-bottom:1.25rem}
+.hero h1 em{font-style:italic;color:var(--stone)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.8;font-weight:300;margin-bottom:2rem}
+.hero-stats{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:2.25rem}
+.hero-stat{display:flex;flex-direction:column;gap:2px}
+.hero-stat-n{font-family:var(--font-d);font-size:2.2rem;font-weight:300;color:var(--stone);line-height:1}
+.hero-stat-l{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+/* ── HERO FORM CARD ── */
+.hero-form-card{background:rgba(250,247,242,.97);padding:2rem;border-radius:3px;backdrop-filter:blur(4px)}
+.hfc-title{font-family:var(--font-d);font-size:1.5rem;font-weight:400;color:var(--charcoal);margin-bottom:.3rem}
+.hfc-sub{font-size:.8rem;color:var(--text-muted);margin-bottom:1.25rem;line-height:1.5}
+.form-group{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.85rem}
+.form-group label{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:500}
+.form-group input,.form-group select,.form-group textarea{border:1px solid var(--border);background:var(--white);padding:.75rem .9rem;font-size:.88rem;font-family:var(--font-b);color:var(--charcoal);border-radius:2px;outline:none;transition:border-color .2s;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--copper)}
+.form-group textarea{resize:vertical;min-height:80px;line-height:1.5}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.form-submit{background:var(--copper);color:#fff;padding:.9rem 1.5rem;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;border-radius:2px;font-family:var(--font-b);transition:background .2s;width:100%;margin-top:.25rem}
+.form-submit:hover{background:var(--copper-dark)}
+.form-note{font-size:.68rem;color:var(--text-muted);text-align:center;margin-top:.65rem}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--charcoal-mid);padding:1rem 2rem}
+.trust-bar-inner{max-width:1150px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.45rem;color:rgba(255,255,255,.5);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+.trust-icon{color:var(--copper)}
+.trust-div{width:1px;height:14px;background:rgba(255,255,255,.1)}
+
+/* ── POSITIONING ── */
+.positioning{background:var(--stone-pale);padding:5rem 2rem}
+.pos-inner{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.pos-quote{font-family:var(--font-d);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:300;line-height:1.4;color:var(--charcoal);font-style:italic}
+.pos-quote strong{font-style:normal;color:var(--copper-dark);font-weight:500}
+.pos-body p{font-size:.93rem;color:var(--text-body);line-height:1.9;font-weight:300;margin-bottom:1rem}
+.btn-copper{background:var(--copper);color:#fff;padding:.85rem 2rem;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:500;border-radius:2px;display:inline-block;transition:background .2s;margin-top:.5rem}
+.btn-copper:hover{background:var(--copper-dark)}
+
+/* ── SERVICES INCLUDED ── */
+.services-inc{background:var(--white);padding:5rem 2rem}
+.si-inner{max-width:1150px;margin:0 auto}
+.si-header{margin-bottom:3rem}
+.eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--copper);font-weight:500;margin-bottom:.7rem;display:flex;align-items:center;gap:.65rem}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--copper)}
+.section-title{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:var(--charcoal);line-height:1.15}
+.si-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border)}
+.si-card{background:var(--white);padding:2rem 1.75rem;display:flex;flex-direction:column;gap:.75rem}
+.si-card-num{font-family:var(--font-d);font-size:.8rem;color:var(--text-muted)}
+.si-card-title{font-family:var(--font-d);font-size:1.35rem;font-weight:400;color:var(--charcoal);line-height:1.2}
+.si-card-desc{font-size:.84rem;color:var(--text-muted);line-height:1.8;font-weight:300}
+
+/* ── PORTFOLIO ── */
+.portfolio{background:var(--charcoal);padding:5rem 2rem}
+.port-inner{max-width:1150px;margin:0 auto}
+.port-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:2px;background:rgba(255,255,255,.05);margin-top:2.5rem}
+.port-item{overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer}
+.port-item.tall{grid-row:span 2;aspect-ratio:auto}
+.port-img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.port-item:hover .port-img{transform:scale(1.04)}
+.port-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,18,15,.9) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.port-item:hover .port-overlay{opacity:1}
+.port-name{font-family:var(--font-d);font-size:1.1rem;font-weight:400;color:#fff;margin-bottom:.2rem}
+.port-meta{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--stone)}
+
+/* ── PROCESS ── */
+.process{background:var(--stone-pale);padding:5rem 2rem}
+.proc-inner{max-width:1000px;margin:0 auto;text-align:center}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;position:relative}
+.proc-steps::before{content:'';position:absolute;top:22px;left:12.5%;right:12.5%;height:1px;background:var(--border);z-index:0}
+.proc-step{padding:0 1rem;position:relative;z-index:1}
+.proc-num{width:44px;height:44px;background:var(--white);border:2px solid var(--copper);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:var(--copper);margin:0 auto 1rem;letter-spacing:.05em}
+.proc-step h3{font-family:var(--font-d);font-size:1.1rem;font-weight:400;color:var(--charcoal);margin-bottom:.5rem;line-height:1.2}
+.proc-step p{font-size:.82rem;color:var(--text-muted);line-height:1.75;font-weight:300}
+
+/* ── REVIEWS ── */
+.reviews{background:var(--white);padding:5rem 2rem}
+.rev-inner{max-width:1150px;margin:0 auto}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.rev-card{background:var(--stone-pale);padding:1.75rem;border-radius:2px;border:1px solid var(--border);display:flex;flex-direction:column;gap:.85rem}
+.rev-stars{color:var(--copper);letter-spacing:2px;font-size:.88rem}
+.rev-text{font-family:var(--font-d);font-size:1.02rem;font-weight:300;line-height:1.65;color:var(--charcoal);font-style:italic;flex:1}
+.rev-author{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding-top:.6rem;border-top:1px solid var(--border)}
+
+/* ── BOTTOM CTA ── */
+.cta-section{background:var(--charcoal);padding:4.5rem 2rem}
+.cta-inner{max-width:900px;margin:0 auto;text-align:center}
+.cta-inner h2{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:#fff;margin-bottom:.75rem;line-height:1.2}
+.cta-inner h2 em{font-style:italic;color:var(--stone)}
+.cta-inner p{font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:2rem}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-copper-solid{background:var(--copper);color:#fff;padding:.9rem 2.2rem;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;font-weight:500;border-radius:2px;display:inline-block;transition:background .2s}
+.btn-copper-solid:hover{background:var(--copper-dark)}
+.btn-ghost-light{border:1px solid rgba(212,196,168,.35);color:var(--stone);padding:.9rem 2.2rem;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;font-weight:400;border-radius:2px;display:inline-block;transition:all .2s}
+.btn-ghost-light:hover{border-color:var(--stone);background:rgba(212,196,168,.06)}
+
+/* ── FOOTER ── */
+.lp-footer{background:var(--charcoal-mid);padding:1.5rem 2rem;text-align:center}
+.lp-footer p{font-size:.72rem;color:rgba(255,255,255,.22);font-weight:300}
+.lp-footer a{color:rgba(255,255,255,.32);transition:color .2s}
+.lp-footer a:hover{color:rgba(255,255,255,.55)}
+
+/* ── STICKY MOBILE CTA ── */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--charcoal);border-top:1px solid rgba(212,196,168,.15);padding:.75rem 1rem;gap:.65rem}
+.s-call{flex:1;background:var(--charcoal-mid);color:#fff;padding:.72rem;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;border:1px solid rgba(255,255,255,.1);border-radius:2px;text-align:center}
+.s-consult{flex:2;background:var(--copper);color:#fff;padding:.72rem;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border-radius:2px;text-align:center}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .hero{min-height:auto;padding:4rem 1.5rem 3rem}
+  .pos-inner{grid-template-columns:1fr;gap:2.5rem}
+  .si-grid{grid-template-columns:1fr 1fr}
+  .port-grid{grid-template-columns:1fr 1fr}
+  .port-item.tall{grid-row:auto}
+  .proc-steps{grid-template-columns:1fr 1fr;gap:2rem}
+  .proc-steps::before{display:none}
+  .rev-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .si-grid{grid-template-columns:1fr}
+  .port-grid{grid-template-columns:1fr}
+  .proc-steps{grid-template-columns:1fr}
+  .form-row-2{grid-template-columns:1fr}
+  .sticky-cta{display:flex}
+  body{padding-bottom:64px}
+  .trust-div{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="lp-nav" aria-label="Page header">
+  <a href="/" class="lp-logo">TURFLi<span>Luxury Outdoor Living</span></a>
+  <a href="tel:+14806961285" class="lp-phone" aria-label="Call Turfli">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <strong>(480) 696-1285</strong>
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="lp-h1">
+  <div class="hero-bg" role="img" aria-label="Luxury Scottsdale backyard remodel by Turfli"></div>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Scottsdale · Paradise Valley · Phoenix Metro</p>
+      <h1 id="lp-h1">Scottsdale's<br><em>Design-Build</em><br>Backyard Remodel<br>Contractor</h1>
+      <p class="hero-sub">We design and build complete outdoor living environments — paver patios, outdoor kitchens, pergolas, putting greens, and luxury artificial turf. One contractor, one warranty, zero surprises.</p>
+      <div class="hero-stats" role="list">
+        <div class="hero-stat" role="listitem"><span class="hero-stat-n">101</span><span class="hero-stat-l">5-Star Reviews</span></div>
+        <div class="hero-stat" role="listitem"><span class="hero-stat-n">15yr</span><span class="hero-stat-l">Warranty</span></div>
+        <div class="hero-stat" role="listitem"><span class="hero-stat-n">ROC</span><span class="hero-stat-l">Licensed</span></div>
+        <div class="hero-stat" role="listitem"><span class="hero-stat-n">A+</span><span class="hero-stat-l">BBB Rated</span></div>
+      </div>
+    </div>
+    <div class="hero-form-card" id="consult-form">
+      <p class="hfc-title">Request a Free Design Consultation</p>
+      <p class="hfc-sub">We'll bring ideas and a plan to your property — no pressure, no obligation.</p>
+      <form action="/contact-submit/" method="POST" aria-label="Free design consultation request">
+        <input type="hidden" name="form-name" value="lp-backyard-remodel">
+        <input type="hidden" name="source" value="google-ads-backyard-remodel-scottsdale">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="h1-fname">First Name</label>
+            <input type="text" id="h1-fname" name="first-name" autocomplete="given-name" required>
+          </div>
+          <div class="form-group">
+            <label for="h1-phone">Phone</label>
+            <input type="tel" id="h1-phone" name="phone" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="h1-city">City / Neighborhood</label>
+          <input type="text" id="h1-city" name="city" placeholder="e.g. North Scottsdale, Paradise Valley, Arcadia">
+        </div>
+        <div class="form-group">
+          <label for="h1-project">What are you looking to build?</label>
+          <select id="h1-project" name="project-type">
+            <option value="">Select a project type</option>
+            <option value="full-remodel">Complete Backyard Remodel</option>
+            <option value="patio-kitchen">Patio + Outdoor Kitchen</option>
+            <option value="turf-patio">Turf + Paver Patio</option>
+            <option value="putting-green">Putting Green</option>
+            <option value="landscape-design">Landscape Design + 3D Rendering</option>
+            <option value="not-sure">Not sure yet — need design ideas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="h1-notes">Tell us about your project</label>
+          <textarea id="h1-notes" name="notes" placeholder="Describe your space, budget range, must-haves, timeline..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Schedule Free Consultation →</button>
+        <p class="form-note">We call within 1 business hour. No spam, ever.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar" role="complementary">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="trust-icon">✓</span> ROC Licensed Contractor</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><span class="trust-icon">✓</span> BBB Accredited — A+ Rating</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><span class="trust-icon">✓</span> Smartscape Certified</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><span class="trust-icon">✓</span> 15-Year Installation Warranty</div>
+    <div class="trust-div"></div>
+    <div class="trust-item"><span class="trust-icon">★</span> 5.0 · 101 Google Reviews</div>
+  </div>
+</div>
+
+<!-- POSITIONING -->
+<section class="positioning" aria-labelledby="pos-heading">
+  <div class="pos-inner">
+    <blockquote>
+      <p class="pos-quote">"We don't show up with a wheelbarrow and a number. We come with <strong>design ideas, material samples, and a 3D rendering</strong> of what your backyard could look like."</p>
+    </blockquote>
+    <div id="pos-heading">
+      <p>Most contractors give you a quote. Turfli gives you a design. Every project starts with an on-site consultation where we listen, measure, and bring creative direction — not just a per-square-foot price.</p>
+      <p>You'll see a 3D rendering of your complete outdoor space before we break ground. Every element — paver pattern, outdoor kitchen layout, turf area, pergola placement, lighting plan — approved by you first.</p>
+      <p>Then we build it. Under one contract, managed by one team, backed by one 15-year warranty.</p>
+      <a href="#consult-form" class="btn-copper">Schedule a Free Design Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="services-inc" aria-labelledby="si-heading">
+  <div class="si-inner">
+    <div class="si-header">
+      <p class="eyebrow">What We Build</p>
+      <h2 class="section-title" id="si-heading">Everything in One Project</h2>
+    </div>
+    <div class="si-grid">
+      <div class="si-card">
+        <p class="si-card-num">01</p>
+        <h3 class="si-card-title">Landscape Design + 3D Renderings</h3>
+        <p class="si-card-desc">Full outdoor living design with 3D visualization, material selection, and lighting concepts before a single shovel hits the ground.</p>
+      </div>
+      <div class="si-card">
+        <p class="si-card-num">02</p>
+        <h3 class="si-card-title">Paver Patios</h3>
+        <p class="si-card-desc">Travertine, porcelain, and concrete paver systems properly installed for Arizona's climate. Pool decks, walkways, and full outdoor living platforms.</p>
+      </div>
+      <div class="si-card">
+        <p class="si-card-num">03</p>
+        <h3 class="si-card-title">Outdoor Kitchens</h3>
+        <p class="si-card-desc">Custom BBQ islands, bar seating, fire pits, and entertainment features built with materials that withstand 115° heat and UV.</p>
+      </div>
+      <div class="si-card">
+        <p class="si-card-num">04</p>
+        <h3 class="si-card-title">Artificial Turf</h3>
+        <p class="si-card-desc">Premium synthetic grass with proper base prep, drainage, and infill. Smartscape certified for HOA compliance. 15-year installation warranty.</p>
+      </div>
+      <div class="si-card">
+        <p class="si-card-num">05</p>
+        <h3 class="si-card-title">Pergolas &amp; Shade Structures</h3>
+        <p class="si-card-desc">Powder-coated aluminum and premium hardwood shade structures for year-round outdoor comfort in Scottsdale's climate.</p>
+      </div>
+      <div class="si-card">
+        <p class="si-card-num">06</p>
+        <h3 class="si-card-title">Putting Greens &amp; Lighting</h3>
+        <p class="si-card-desc">Custom putting greens and landscape lighting designed to complete your outdoor living experience from morning to evening.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" aria-labelledby="port-heading">
+  <div class="port-inner">
+    <p class="eyebrow" style="color:var(--stone)">Recent Projects</p>
+    <h2 class="section-title" style="color:#fff" id="port-heading">Our Work in Scottsdale &amp; Paradise Valley</h2>
+    <div class="port-grid" role="list" aria-label="Recent backyard remodel projects">
+      <div class="port-item tall" role="listitem">
+        <img class="port-img" src="fann-344-scaled-e1748393192373-2048x1334.jpg"
+          alt="Complete backyard remodel — paver patio, outdoor kitchen, turf by Turfli" loading="lazy">
+        <div class="port-overlay">
+          <p class="port-name">McCormick Ranch Complete Remodel</p>
+          <p class="port-meta">Scottsdale · Travertine · Outdoor kitchen · Turf · Pergola</p>
+        </div>
+      </div>
+      <div class="port-item" role="listitem">
+        <img class="port-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+          alt="Outdoor kitchen and BBQ island — Arcadia Phoenix by Turfli" loading="lazy">
+        <div class="port-overlay">
+          <p class="port-name">Arcadia Outdoor Kitchen</p>
+          <p class="port-meta">Phoenix · BBQ island · Bar seating</p>
+        </div>
+      </div>
+      <div class="port-item" role="listitem">
+        <img class="port-img" src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=600&q=80"
+          alt="Luxury paver patio — North Scottsdale by Turfli" loading="lazy">
+        <div class="port-overlay">
+          <p class="port-name">North Scottsdale Paver Patio</p>
+          <p class="port-meta">Scottsdale · Travertine pavers · Fire pit</p>
+        </div>
+      </div>
+      <div class="port-item" role="listitem">
+        <img class="port-img" src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&q=80"
+          alt="Pergola and outdoor seating — DC Ranch Scottsdale by Turfli" loading="lazy">
+        <div class="port-overlay">
+          <p class="port-name">DC Ranch Pergola &amp; Living Space</p>
+          <p class="port-meta">Scottsdale · Pergola · Porcelain pavers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" aria-labelledby="proc-heading">
+  <div class="proc-inner">
+    <p class="eyebrow" style="justify-content:center">Our Process</p>
+    <h2 class="section-title" id="proc-heading" style="margin-bottom:.5rem">How a Turfli Remodel Works</h2>
+    <p style="font-size:.92rem;color:var(--text-muted);margin-bottom:0">From your first call to your final walkthrough.</p>
+    <div class="proc-steps" role="list">
+      <div class="proc-step" role="listitem">
+        <div class="proc-num">1</div>
+        <h3>Free Design Consultation</h3>
+        <p>We visit your property, understand how you use your space, and come with real design ideas — not just a notepad.</p>
+      </div>
+      <div class="proc-step" role="listitem">
+        <div class="proc-num">2</div>
+        <h3>3D Design &amp; Proposal</h3>
+        <p>We create 3D renderings and a line-item proposal. You approve every element before anything is ordered or scheduled.</p>
+      </div>
+      <div class="proc-step" role="listitem">
+        <div class="proc-num">3</div>
+        <h3>Expert Installation</h3>
+        <p>Our crew handles every phase — grading, drainage, hardscape, turf, structures, and lighting — under one contract.</p>
+      </div>
+      <div class="proc-step" role="listitem">
+        <div class="proc-num">4</div>
+        <h3>15-Year Warranty</h3>
+        <p>Final walkthrough, full warranty documentation, and our commitment to stand behind the work long after we leave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" aria-labelledby="rev-heading">
+  <div class="rev-inner">
+    <p class="eyebrow">What Homeowners Say</p>
+    <h2 class="section-title" id="rev-heading">5.0 Average · 101 Google Reviews</h2>
+    <div class="rev-grid" role="list">
+      <div class="rev-card" role="listitem">
+        <p class="rev-stars">★★★★★</p>
+        <p class="rev-text">"The backyard is completely transformed. They handled the design, paver patio, outdoor kitchen, pergola, and turf as a single project. Quality is outstanding — looks better than magazine photos."</p>
+        <p class="rev-author">Maria T. · McCormick Ranch, Scottsdale</p>
+      </div>
+      <div class="rev-card" role="listitem">
+        <p class="rev-stars">★★★★★</p>
+        <p class="rev-text">"We had four contractors out. Turfli were the only ones who showed up with actual design concepts. The 3D rendering made the whole decision easy. They delivered exactly what they showed us."</p>
+        <p class="rev-author">James &amp; Lisa H. · North Scottsdale</p>
+      </div>
+      <div class="rev-card" role="listitem">
+        <p class="rev-stars">★★★★★</p>
+        <p class="rev-text">"$85,000 project. Zero surprises. The team was professional from consultation through final walkthrough. Our Paradise Valley backyard now looks like a resort. Worth every dollar."</p>
+        <p class="rev-author">Robert &amp; Amy W. · Paradise Valley</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-section" aria-labelledby="cta-heading">
+  <div class="cta-inner">
+    <h2 id="cta-heading">Ready to See What Your<br><em>Backyard Could Look Like?</em></h2>
+    <p>Free on-site design consultations available across Scottsdale, Paradise Valley, and the Phoenix metro. We bring design ideas, material samples, and realistic pricing — no pressure, no obligation.</p>
+    <div class="cta-buttons">
+      <a href="#consult-form" class="btn-copper-solid">Schedule Free Consultation</a>
+      <a href="tel:+14806961285" class="btn-ghost-light">Call (480) 696-1285</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+  <p>© 2026 Luxury Lawns and Greens LLC · <a href="https://turfli.com">turfli.com</a> · Scottsdale, AZ · ROC Licensed · BBB A+ · <a href="https://turfli.com/privacy/">Privacy</a></p>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" role="complementary" aria-label="Quick contact">
+  <a href="tel:+14806961285" class="s-call">Call Now</a>
+  <a href="#consult-form" class="s-consult">Free Consultation</a>
+</div>
+
+</body>
+</html>

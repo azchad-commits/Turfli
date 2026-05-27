@@ -1,0 +1,4 @@
+anthropic>=0.40.0
+pyyaml>=6.0
+google-ads>=24.0.0
+facebook-business>=20.0.0

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio — Scottsdale Outdoor Living Projects | Turfli</title>
+<meta name="description" content="Browse Turfli's portfolio of outdoor living projects in Scottsdale, Paradise Valley, and Phoenix. Artificial turf, landscape design, pavers, outdoor kitchens & putting greens.">
+<link rel="canonical" href="https://turfli.com/portfolio/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"Turfli Project Portfolio",
+  "description":"Portfolio of outdoor living installations by Turfli in Scottsdale, Paradise Valley, and Phoenix, AZ.",
+  "provider":{"@type":"LocalBusiness","name":"Turfli","telephone":"+14806961285"}
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --copper:#b8742a;--copper-dark:#8a5218;
+  --charcoal:#1c1a17;--charcoal-mid:#2e2b25;
+  --stone:#d4c4a8;--stone-pale:#faf7f2;--border:#e2d8c8;
+  --white:#fff;--text-body:#4a4540;--text-muted:#7a7268;
+  --font-d:'Cormorant Garamond',Georgia,serif;
+  --font-b:'Jost',sans-serif;
+}
+body{font-family:var(--font-b);color:var(--text-body);background:var(--white);line-height:1.6}
+a{color:var(--copper);text-decoration:none}
+a:hover{color:var(--copper-dark)}
+img{max-width:100%;display:block}
+
+.nav{background:var(--charcoal);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:var(--font-d);font-size:1.7rem;font-weight:600;color:var(--white);letter-spacing:.04em}
+.nav-logo span{color:var(--copper)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--stone);font-size:.85rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--copper)}
+.nav-cta{background:var(--copper);color:var(--white)!important;padding:.45rem 1.1rem;border-radius:3px}
+.nav-cta:hover{background:var(--copper-dark)!important}
+
+/* HERO */
+.hero{background:var(--charcoal);padding:80px 5% 70px;text-align:center}
+.hero h1{font-family:var(--font-d);font-size:clamp(2.4rem,4.5vw,3.4rem);font-weight:600;color:var(--white);margin-bottom:.8rem}
+.hero h1 em{font-style:normal;color:var(--copper)}
+.hero p{color:var(--stone);font-size:1.05rem;max-width:580px;margin:0 auto}
+
+/* FILTER TABS */
+.filter-bar{background:var(--stone-pale);border-bottom:1px solid var(--border);padding:1.2rem 5%;display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center}
+.filter-btn{padding:.5rem 1.2rem;border-radius:20px;font-size:.82rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border:1.5px solid var(--border);background:var(--white);color:var(--text-muted);transition:all .2s}
+.filter-btn.active,.filter-btn:hover{background:var(--copper);color:var(--white);border-color:var(--copper)}
+
+/* FEATURED PROJECT */
+.featured{padding:70px 5%;max-width:1200px;margin:0 auto}
+.featured-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+.featured-img{height:520px;background:url('/images/fann-344-scaled-e1748393192373-2048x1334.jpg') center/cover}
+.featured-info{background:var(--charcoal);padding:3.5rem;display:flex;flex-direction:column;justify-content:center}
+.featured-tag{display:inline-block;background:rgba(184,116,42,.2);border:1px solid rgba(184,116,42,.4);color:var(--stone);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:2px;margin-bottom:1.2rem}
+.featured-info h2{font-family:var(--font-d);font-size:2.2rem;font-weight:600;color:var(--white);margin-bottom:1rem;line-height:1.2}
+.featured-info p{color:var(--stone);font-size:.93rem;line-height:1.75;margin-bottom:1.5rem}
+.feat-details{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
+.feat-detail{font-size:.8rem;color:var(--stone)}
+.feat-detail strong{display:block;color:var(--copper);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.15rem}
+.feat-cta{display:inline-block;background:var(--copper);color:var(--white);padding:.8rem 2rem;border-radius:4px;font-weight:600;font-size:.9rem;transition:background .2s}
+.feat-cta:hover{background:var(--copper-dark);color:var(--white)}
+
+/* PORTFOLIO GRID */
+.portfolio{padding:20px 5% 80px;max-width:1200px;margin:0 auto}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.project-card{border-radius:6px;overflow:hidden;border:1px solid var(--border);transition:box-shadow .2s;background:var(--white)}
+.project-card:hover{box-shadow:0 10px 40px rgba(0,0,0,.12)}
+.project-img{width:100%;height:240px;object-fit:cover;transition:transform .3s}
+.project-card:hover .project-img{transform:scale(1.03)}
+.project-card:hover .project-img-wrap{overflow:hidden}
+.project-img-wrap{overflow:hidden}
+.project-body{padding:1.4rem}
+.project-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem}
+.project-tag{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--copper);background:rgba(184,116,42,.1);padding:.2rem .55rem;border-radius:2px}
+.project-body h3{font-family:var(--font-d);font-size:1.2rem;font-weight:600;color:var(--charcoal);margin-bottom:.35rem}
+.project-body p{font-size:.85rem;color:var(--text-body);line-height:1.6;margin-bottom:.8rem}
+.project-meta{display:flex;gap:1.2rem;font-size:.78rem;color:var(--text-muted)}
+
+/* INSTAGRAM STRIP */
+.instagram{background:var(--stone-pale);padding:70px 5%}
+.instagram-inner{max-width:1100px;margin:0 auto;text-align:center}
+.instagram h2{font-family:var(--font-d);font-size:2.2rem;font-weight:600;color:var(--charcoal);margin-bottom:.6rem}
+.instagram p{color:var(--text-muted);margin-bottom:2rem}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;margin-bottom:1.5rem}
+.ig-tile{aspect-ratio:1;overflow:hidden;border-radius:4px;background:var(--charcoal)}
+.ig-tile img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.ig-tile:hover img{opacity:.8}
+.ig-handle{display:inline-flex;align-items:center;gap:.5rem;background:var(--charcoal);color:var(--white);padding:.75rem 1.8rem;border-radius:4px;font-weight:600;font-size:.9rem;transition:background .2s}
+.ig-handle:hover{background:var(--charcoal-mid);color:var(--white)}
+
+/* CTA BAND */
+.cta-band{background:var(--copper);padding:70px 5%;text-align:center}
+.cta-band h2{font-family:var(--font-d);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:600;color:var(--white);margin-bottom:.8rem}
+.cta-band p{color:rgba(255,255,255,.87);margin-bottom:2rem;font-size:1.05rem}
+.btn-white{background:var(--white);color:var(--copper);padding:.95rem 2.5rem;border-radius:4px;font-weight:700;font-size:.95rem;display:inline-block;transition:all .2s;margin:.4rem}
+.btn-white:hover{background:var(--stone-pale);color:var(--copper-dark)}
+.btn-outline-white{border:2px solid var(--white);color:var(--white);padding:.95rem 2.5rem;border-radius:4px;font-weight:600;font-size:.95rem;display:inline-block;transition:all .2s;margin:.4rem}
+.btn-outline-white:hover{background:rgba(255,255,255,.12);color:var(--white)}
+
+footer{background:var(--charcoal);color:var(--stone);padding:40px 5%;text-align:center}
+footer p{font-size:.85rem;margin-bottom:.3rem}
+footer a{color:var(--stone)}
+footer a:hover{color:var(--copper)}
+
+@media(max-width:1000px){
+  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .ig-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:900px){
+  .featured-inner{grid-template-columns:1fr}
+  .featured-img{height:360px}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .portfolio-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Turf<span>li</span></a>
+  <ul class="nav-links">
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/locations/">Locations</a></li>
+    <li><a href="/about-turfli-scottsdale/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="tel:+14806961285" class="nav-cta">(480) 696-1285</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Our <em>Portfolio</em></h1>
+  <p>500+ outdoor living projects across Scottsdale, Paradise Valley, and the greater Phoenix metro. Each one designed and built by our in-house team.</p>
+</section>
+
+<div class="filter-bar">
+  <button class="filter-btn active">All Projects</button>
+  <button class="filter-btn">Artificial Turf</button>
+  <button class="filter-btn">Landscape Design</button>
+  <button class="filter-btn">Pavers &amp; Patios</button>
+  <button class="filter-btn">Outdoor Kitchens</button>
+  <button class="filter-btn">Putting Greens</button>
+  <button class="filter-btn">Lighting</button>
+</div>
+
+<section class="featured">
+  <div class="featured-inner">
+    <div class="featured-img" role="img" aria-label="Turfli luxury outdoor living project"></div>
+    <div class="featured-info">
+      <span class="featured-tag">Featured Project</span>
+      <h2>Silverleaf Estate — Complete Outdoor Transformation</h2>
+      <p>A 3.5-acre Silverleaf estate with a complete outdoor redesign: 8,000 sq ft of premium turf, travertine pool deck, resort-style outdoor kitchen, custom putting green, and a 60-fixture lighting system integrated with the home's Crestron automation.</p>
+      <div class="feat-details">
+        <div class="feat-detail"><strong>Location</strong>Silverleaf, Scottsdale</div>
+        <div class="feat-detail"><strong>Project Size</strong>3.5 acres</div>
+        <div class="feat-detail"><strong>Timeline</strong>14 weeks</div>
+        <div class="feat-detail"><strong>Services</strong>Turf, Pavers, Kitchen, Lighting, Putting Green</div>
+      </div>
+      <a href="/contact/" class="feat-cta">Start Your Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio">
+  <div class="portfolio-grid">
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Scottsdale turf backyard transformation">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Artificial Turf</span><span class="project-tag">Pavers</span></div>
+        <h3>DC Ranch Backyard Remodel</h3>
+        <p>2,400 sq ft of premium turf with integrated travertine hardscape, fire pit, and shade pergola. HOA DRC approved first submission.</p>
+        <div class="project-meta"><span>DC Ranch, Scottsdale</span><span>2,400 sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&q=80" alt="Paradise Valley pool deck travertine">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Pavers</span><span class="project-tag">Landscape Design</span></div>
+        <h3>Paradise Valley Pool &amp; Courtyard</h3>
+        <p>Premium Italian travertine pool deck, entry motor court, and native desert courtyard with custom water feature and boulder installation.</p>
+        <div class="project-meta"><span>Paradise Valley</span><span>4,100 sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" alt="Scottsdale outdoor kitchen design">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Outdoor Kitchen</span><span class="project-tag">Lighting</span></div>
+        <h3>North Scottsdale Entertainer Kitchen</h3>
+        <p>Full outdoor kitchen suite with Wolf grill, pizza oven, kegerator, and bar seating for 8. Coordinated pergola and ambient lighting system.</p>
+        <div class="project-meta"><span>North Scottsdale</span><span>Full Kitchen</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&q=80" alt="Pet turf Phoenix dog yard">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Pet Turf</span></div>
+        <h3>Arcadia Pet Yard — Three Dogs</h3>
+        <p>1,800 sq ft of ZeoFill-infilled pet turf for a three-dog household. Custom edging, drainage engineering for monsoon season, shade structure integration.</p>
+        <div class="project-meta"><span>Arcadia, Phoenix</span><span>1,800 sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=700&q=80" alt="Scottsdale putting green installation">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Putting Green</span></div>
+        <h3>Gainey Ranch Backyard Putting Green</h3>
+        <p>4-hole practice green with 3 speeds, natural fringe surrounds, and bunker. Designed around existing mature landscaping without disrupting irrigation.</p>
+        <div class="project-meta"><span>Gainey Ranch, Scottsdale</span><span>1,200 sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="https://images.unsplash.com/photo-1447175008436-054170c2e979?w=700&q=80" alt="Desert landscape design Scottsdale">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Landscape Design</span><span class="project-tag">Lighting</span></div>
+        <h3>Troon North Desert Modern Redesign</h3>
+        <p>Complete native desert landscape redesign — saguaro relocation, palo verde placement, DG ground cover, and a 28-fixture LED lighting system. Golf course view orientation.</p>
+        <div class="project-meta"><span>Troon North, Scottsdale</span><span>Full Property</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&q=80" alt="Scottsdale porcelain paver patio">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Pavers</span></div>
+        <h3>Desert Mountain Porcelain Patio</h3>
+        <p>Large-format 24×48" porcelain pavers replacing an existing cracked concrete patio. DMCA-compliant material selection and finish approved first submission.</p>
+        <div class="project-meta"><span>Desert Mountain, Scottsdale</span><span>1,600 sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=700&q=80" alt="Scottsdale landscape lighting project">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Lighting</span></div>
+        <h3>McCormick Ranch Full Lighting Design</h3>
+        <p>35-fixture LED system for a mature McCormick Ranch property. Uplighting for specimen citrus trees, path system, and pool lighting integrated with existing smart home.</p>
+        <div class="project-meta"><span>McCormick Ranch, Scottsdale</span><span>35 fixtures</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-wrap">
+        <img class="project-img" src="/images/fann-344-scaled-e1748393192373-2048x1334.jpg" alt="Scottsdale artificial turf luxury backyard">
+      </div>
+      <div class="project-body">
+        <div class="project-tags"><span class="project-tag">Artificial Turf</span><span class="project-tag">Landscape Design</span></div>
+        <h3>Biltmore Estates Full Backyard</h3>
+        <p>3,200 sq ft premium turf installation with integrated desert planting beds, travertine stepping stones, and complete irrigation system removal and capping.</p>
+        <div class="project-meta"><span>Biltmore, Phoenix</span><span>3,200 sq ft</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="instagram">
+  <div class="instagram-inner">
+    <h2>More on Instagram</h2>
+    <p>Follow <strong>@turfliluxurylawns</strong> for daily project photos and behind-the-scenes installation content.</p>
+    <div class="ig-grid">
+      <div class="ig-tile"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=70" alt="Turfli Instagram"></div>
+      <div class="ig-tile"><img src="https://images.unsplash.com/photo-1447175008436-054170c2e979?w=300&q=70" alt="Turfli Instagram"></div>
+      <div class="ig-tile"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=300&q=70" alt="Turfli Instagram"></div>
+      <div class="ig-tile"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&q=70" alt="Turfli Instagram"></div>
+      <div class="ig-tile"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=300&q=70" alt="Turfli Instagram"></div>
+      <div class="ig-tile"><img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=300&q=70" alt="Turfli Instagram"></div>
+    </div>
+    <a href="https://instagram.com/turfliluxurylawns" target="_blank" rel="noopener" class="ig-handle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @turfliluxurylawns
+    </a>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Ready to Start Your Project?</h2>
+  <p>Free in-person estimates throughout Scottsdale, Paradise Valley, and the Phoenix metro.</p>
+  <a href="tel:+14806961285" class="btn-white">Call (480) 696-1285</a>
+  <a href="/contact/" class="btn-outline-white">Request a Free Estimate</a>
+</section>
+
+<footer>
+  <p>&copy; 2025 Turfli · Scottsdale, AZ · <a href="tel:+14806961285">(480) 696-1285</a></p>
+  <p><a href="/">Home</a> · <a href="/services/">Services</a> · <a href="/about-turfli-scottsdale/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy Policy</a></p>
+</footer>
+
+<script>
+// Filter button interactivity
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>

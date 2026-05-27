@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block Google Ads landing pages from indexing (set noindex in HTML too)
+Disallow: /lp-
+Disallow: /lp/
+
+Sitemap: https://turfli.com/sitemap.xml
