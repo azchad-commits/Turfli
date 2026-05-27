@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turfli — Remaining Tasks Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --copper:#b8742a;--copper-dark:#8a5218;--charcoal:#1c1a17;
+    --stone:#d4c4a8;--bg:#faf9f7;--border:#e2d8c8;--text:#2e2b25;
+    --muted:#6b6560;--green:#1a7a50;--red:#8a1c1c;--blue:#1a4a8a;
+  }
+  body{font-family:'Inter',sans-serif;background:#fff;color:var(--text);font-size:14px;line-height:1.65}
+  .cover{background:var(--charcoal);padding:4rem 3rem;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end}
+  .cover-tag{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);margin-bottom:.75rem;font-weight:500}
+  .cover-title{font-size:2.2rem;font-weight:300;color:#fff;line-height:1.15;margin-bottom:.75rem}
+  .cover-title strong{font-weight:600;color:var(--stone)}
+  .cover-meta{font-size:.8rem;color:rgba(255,255,255,.45);font-weight:300}
+  .toc{background:var(--bg);padding:2rem 3rem;border-bottom:1px solid var(--border)}
+  .toc h2{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--copper);font-weight:600;margin-bottom:1rem}
+  .toc ol{padding-left:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+  .toc li{font-size:.83rem;color:var(--muted)}
+  .toc li a{color:var(--blue);text-decoration:none}
+  .progress-bar-wrap{background:var(--bg);padding:1.5rem 3rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1.5rem}
+  .progress-label{font-size:.75rem;font-weight:600;color:var(--charcoal);white-space:nowrap}
+  .progress-track{flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+  .progress-fill{height:100%;background:var(--copper);border-radius:4px;width:42%}
+  .progress-pct{font-size:.75rem;font-weight:700;color:var(--copper)}
+  .page{padding:2.5rem 3rem;border-bottom:1px solid var(--border)}
+  h1.section-title{font-size:1.5rem;font-weight:600;color:var(--charcoal);margin-bottom:.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--copper);display:flex;align-items:center;gap:.75rem}
+  h1.section-title .num{font-size:.75rem;background:var(--copper);color:#fff;padding:.2rem .6rem;border-radius:2px;font-weight:600;letter-spacing:.05em}
+  h2{font-size:1rem;font-weight:600;color:var(--charcoal);margin:1.75rem 0 .6rem}
+  h3{font-size:.88rem;font-weight:600;color:var(--copper-dark);margin:1.25rem 0 .5rem;text-transform:uppercase;letter-spacing:.06em}
+  p{font-size:.88rem;color:var(--text);line-height:1.75;margin-bottom:.85rem}
+  p:last-child{margin-bottom:0}
+  ul,ol{padding-left:1.4rem;margin-bottom:.85rem}
+  li{font-size:.87rem;color:var(--text);line-height:1.7;margin-bottom:.3rem}
+  li strong{color:var(--charcoal)}
+  code{font-family:'Fira Code',monospace;font-size:.8rem;background:#f0ede8;padding:.15rem .4rem;border-radius:3px;color:var(--copper-dark)}
+  pre{font-family:'Fira Code',monospace;font-size:.78rem;background:var(--charcoal);color:#e8e0d4;padding:1.25rem 1.5rem;border-radius:4px;overflow-x:auto;margin:1rem 0;line-height:1.6}
+  .callout{padding:1rem 1.25rem;border-radius:4px;margin:1rem 0;border-left:3px solid}
+  .callout.critical{background:#fff5f5;border-color:var(--red)}
+  .callout.critical strong{color:var(--red)}
+  .callout.tip{background:#f0f7f4;border-color:var(--green)}
+  .callout.tip strong{color:var(--green)}
+  .callout.info{background:#f0f4fa;border-color:var(--blue)}
+  .callout.info strong{color:var(--blue)}
+  .callout.warn{background:#fdf6ef;border-color:var(--copper)}
+  .callout.warn strong{color:var(--copper-dark)}
+  .callout p{font-size:.85rem;margin:0}
+  table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.83rem}
+  thead th{background:var(--charcoal);color:#fff;padding:.6rem .85rem;text-align:left;font-weight:500;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+  tbody td{padding:.55rem .85rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tbody tr:nth-child(even){background:var(--bg)}
+  tbody tr:hover{background:#f5efe6}
+  .priority-critical{color:var(--red);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+  .priority-high{color:var(--copper-dark);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+  .priority-medium{color:#6b6560;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+  .badge{display:inline-block;font-size:.68rem;padding:.15rem .45rem;border-radius:2px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  .badge.done{background:#dcf0e8;color:var(--green)}
+  .badge.todo{background:#fde8e8;color:var(--red)}
+  .badge.team{background:#e8eefa;color:var(--blue)}
+  .badge.optional{background:#f5efe6;color:var(--copper-dark)}
+  .step-list{counter-reset:steps;list-style:none;padding:0}
+  .step-list li{counter-increment:steps;padding:.6rem 0 .6rem 2.75rem;position:relative;border-bottom:1px solid var(--border);font-size:.87rem}
+  .step-list li:last-child{border-bottom:none}
+  .step-list li::before{content:counter(steps);position:absolute;left:0;top:.55rem;width:1.8rem;height:1.8rem;background:var(--copper);color:#fff;border-radius:50%;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+  .cmd{background:var(--charcoal);color:#e8e0d4;font-family:'Fira Code',monospace;font-size:.8rem;padding:.7rem 1rem;border-radius:4px;margin:.5rem 0;display:block}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1rem 0}
+  .done-list{list-style:none;padding:0}
+  .done-list li{padding:.4rem 0 .4rem 1.75rem;position:relative;font-size:.87rem;color:var(--muted)}
+  .done-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+  @media print{
+    .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    h1.section-title .num{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .page{page-break-inside:avoid}
+    a{color:inherit}
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <p class="cover-tag">Turfli · Luxury Lawns and Greens LLC · turfli.com</p>
+  <h1 class="cover-title">Remaining Tasks &amp; <strong>What Was Completed</strong></h1>
+  <p class="cover-meta">Generated May 27, 2026 · Follows the original Implementation Guide · For Turfli Internal Use</p>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-bar-wrap">
+  <span class="progress-label">Implementation Progress</span>
+  <div class="progress-track"><div class="progress-fill"></div></div>
+  <span class="progress-pct">~42% Complete</span>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#s1">What Was Completed (This Session)</a></li>
+    <li><a href="#s2">Critical — Do Immediately (Blocking Live Launch)</a></li>
+    <li><a href="#s3">High Priority — First Week After Launch</a></li>
+    <li><a href="#s4">WordPress / Live Site Fixes</a></li>
+    <li><a href="#s5">Ads Agent Setup</a></li>
+    <li><a href="#s6">Speed Optimization</a></li>
+    <li><a href="#s7">Monthly Ongoing Tasks</a></li>
+  </ol>
+</div>
+
+<!-- SECTION 1 -->
+<div class="page" id="s1">
+  <h1 class="section-title"><span class="num">01</span> What Was Completed</h1>
+
+  <p>The following items were fixed in this session, building on the original implementation guide:</p>
+
+  <h2>Code Changes (index.html)</h2>
+  <ul class="done-list">
+    <li>Fixed stray <code>(480) 999-0000</code> placeholder phone number in CTA section → corrected to <code>(480) 696-1285</code></li>
+    <li>Added "Recent Articles" section to footer linking all 6 blog posts (was previously only linking to <code>/blog/</code> — these links now pass SEO authority to blog content)</li>
+    <li>Added 3 new service cards to the homepage services grid (items 10, 11, 12)</li>
+    <li>Updated JSON-LD ItemList schema to include the 3 new services</li>
+    <li>Updated footer services list to include the 3 new services</li>
+  </ul>
+
+  <h2>New Pages Created</h2>
+  <ul class="done-list">
+    <li><code>/services/fire-pits-grills/</code> — Full service page with FAQ, features, related services, CTA, and footer</li>
+    <li><code>/services/desert-landscaping/</code> — Full service page with Smartscape content, HOA compliance angle, and FAQ</li>
+    <li><code>/services/3d-landscape-renderings/</code> — Full service page with 4-step process, "no commitment" messaging, and FAQ</li>
+  </ul>
+
+  <h2>sitemap.xml Updated</h2>
+  <ul class="done-list">
+    <li>All 3 new service pages added with <code>lastmod: 2026-05-27</code> and priority 0.8</li>
+  </ul>
+
+  <h2>Previously Done (Original Guide Work)</h2>
+  <ul class="done-list">
+    <li>Homepage H1 fix: single H1 as "Scottsdale's Design-Build Outdoor Living Contractor"</li>
+    <li>Title tag rewrite with keyword + city</li>
+    <li>Meta description rewrite</li>
+    <li>Instagram + Facebook social links added to nav, footer, contact section</li>
+    <li>8-question FAQ with accordion and FAQPage JSON-LD schema</li>
+    <li>In-body links to all service pages</li>
+    <li>Portfolio section with hover overlays and project details</li>
+    <li>Mobile hamburger menu with drawer and sticky bottom CTA bar</li>
+    <li>LocalBusiness, FAQPage, Service, and ItemList JSON-LD schemas</li>
+    <li>All city tags as clickable links to location pages</li>
+    <li>Seasonal CTA bar replacing domain expiry warning</li>
+    <li>About URL corrected to <code>/about-turfli-scottsdale/</code></li>
+    <li>Ads agent: <code>field_mask_pb2.FieldMask</code> fix for budget updates</li>
+    <li>Ads agent: <code>meta_pause_campaign</code> account parameter fix</li>
+    <li>All 9 core service pages built and live in local files</li>
+    <li>All location pages (12) and neighborhood pages (8) built</li>
+    <li>6 blog posts created</li>
+  </ul>
+</div>
+
+<!-- SECTION 2 -->
+<div class="page" id="s2">
+  <h1 class="section-title"><span class="num">02</span> Critical — Blocking Live Launch</h1>
+
+  <div class="callout critical">
+    <p><strong>Do not put the site live until these are resolved.</strong> Each item either affects visitor trust, breaks functionality, or means visitors see incorrect information.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Task</th><th>Who</th><th>How</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Confirm GoDaddy domain auto-renewal</strong><br>Domain was flagged as expiring May 24, 2026</td>
+        <td>Turfli team</td>
+        <td>Login to GoDaddy → My Products → turfli.com → Auto-Renew ON → Confirm payment method is valid</td>
+        <td class="priority-critical">Critical</td>
+      </tr>
+      <tr>
+        <td><strong>Verify phone number is correct</strong><br>Current: <code>(480) 696-1285</code> in all files. If wrong, search and replace.</td>
+        <td>Turfli team</td>
+        <td>Search <code>696-1285</code> in <code>index.html</code> — appears in nav, hero, contact section, mobile sticky bar, footer. Update all if wrong.</td>
+        <td class="priority-critical">Critical</td>
+      </tr>
+      <tr>
+        <td><strong>Confirm hello@turfli.com is the correct email</strong></td>
+        <td>Turfli team</td>
+        <td>Check contact page and index.html for <code>hello@turfli.com</code>. If wrong, search and replace.</td>
+        <td class="priority-critical">Critical</td>
+      </tr>
+      <tr>
+        <td><strong>Configure contact form handler</strong><br>Form posts to <code>/contact-submit/</code> — needs a real backend</td>
+        <td>Developer / host</td>
+        <td>Set up Netlify Forms, Formspree, or your CMS form handler to receive submissions from the contact form and email to <code>hello@turfli.com</code></td>
+        <td class="priority-critical">Critical</td>
+      </tr>
+      <tr>
+        <td><strong>Replace all Unsplash placeholder images</strong><br>Portfolio grid, Before/After, Instagram grid, Karl's headshot</td>
+        <td>Turfli team</td>
+        <td>See Section 4 of original guide for exact instructions. Download from @turfliluxurylawns Instagram. Save to project folder. Update <code>src</code> attributes in <code>index.html</code>.</td>
+        <td class="priority-critical">Critical</td>
+      </tr>
+      <tr>
+        <td><strong>Upload site files to production host</strong></td>
+        <td>Developer / host</td>
+        <td>Replace live site with the updated <code>index.html</code>, all <code>/services/</code>, <code>/locations/</code>, <code>/neighborhoods/</code>, and <code>/blog/</code> pages. Also upload new service pages: <code>/services/fire-pits-grills/</code>, <code>/services/desert-landscaping/</code>, <code>/services/3d-landscape-renderings/</code></td>
+        <td class="priority-critical">Critical</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 3 -->
+<div class="page" id="s3">
+  <h1 class="section-title"><span class="num">03</span> High Priority — First Week After Launch</h1>
+
+  <ol class="step-list">
+    <li>
+      <strong>Submit sitemap to Google Search Console</strong><br>
+      Go to <a href="https://search.google.com/search-console">search.google.com/search-console</a> → Sitemaps → Submit <code>https://turfli.com/sitemap.xml</code>.<br>
+      The sitemap now includes 3 new service pages that weren't there before.
+    </li>
+    <li>
+      <strong>Request indexing for the 3 new service pages</strong><br>
+      In Search Console → URL Inspection → Enter each URL → Request Indexing:<br>
+      <code>https://turfli.com/services/fire-pits-grills/</code><br>
+      <code>https://turfli.com/services/desert-landscaping/</code><br>
+      <code>https://turfli.com/services/3d-landscape-renderings/</code><br>
+      Also request indexing for the updated homepage.
+    </li>
+    <li>
+      <strong>Confirm the Google review link</strong><br>
+      Current link: <code>https://g.co/kgs/turfli</code><br>
+      Go to Google Business Profile → Share → Copy the actual short link. If it's different, update the <code>href</code> in the reviews section of <code>index.html</code>.
+    </li>
+    <li>
+      <strong>Add the ROC license number to the credentials section</strong><br>
+      Search <code>index.html</code> for "ROC" — add the actual Arizona Registrar of Contractors license number (format: "ROC #123456") where credentials are displayed. This is a high-trust signal for high-value clients.
+    </li>
+    <li>
+      <strong>Update Google Business Profile primary category</strong><br>
+      Login to Google Business Profile → Info → Business category → Change from "Turf supplier" to "Landscape Designer". Add secondary categories: "Outdoor Kitchen Contractor", "Patio Contractor".<br>
+      <em>This is the single fastest way to improve local pack rankings for backyard remodel searches.</em>
+    </li>
+    <li>
+      <strong>Request indexing for the homepage</strong><br>
+      In Search Console → URL Inspection → <code>https://turfli.com</code> → Request Indexing. Do this after confirming all images are real (not Unsplash).
+    </li>
+    <li>
+      <strong>Validate structured data</strong><br>
+      Paste <code>https://turfli.com</code> into <a href="https://search.google.com/test/rich-results">search.google.com/test/rich-results</a> to confirm Google reads the FAQ and LocalBusiness schemas correctly.
+    </li>
+    <li>
+      <strong>Connect Instagram feed widget (optional)</strong><br>
+      Sign up at embedsocial.com → Connect @turfliluxurylawns → Create grid widget → Replace the static Instagram grid in <code>index.html</code> with the embed code. Takes ~10 minutes.
+    </li>
+  </ol>
+</div>
+
+<!-- SECTION 4 -->
+<div class="page" id="s4">
+  <h1 class="section-title"><span class="num">04</span> WordPress / Live Site Fixes</h1>
+
+  <p>These issues were identified in the original site audit (Hardscaping HQ, May 2026) and exist on the <strong>live WordPress/CMS site</strong>, not in the local HTML files. They require access to the live site CMS or hosting panel.</p>
+
+  <div class="callout warn">
+    <p><strong>Note:</strong> The redesigned <code>index.html</code> replaces the current homepage. These WordPress fixes apply to other pages on the live site that the new homepage doesn't replace.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Fix</th><th>How</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Fix canonical on press article</strong><br>
+        <code>/how-two-lifelong-friends.../</code> — canonical points to YourValley.net, giving that site the SEO authority</td>
+        <td>In WordPress → Edit the press article page → Find the canonical URL field (Yoast SEO or RankMath) → Change it from the YourValley.net URL to <code>https://turfli.com/how-two-lifelong-friends.../</code></td>
+        <td class="priority-critical">Critical</td>
+      </tr>
+      <tr>
+        <td><strong>Remove AI prompt from /contact/ page</strong><br>
+        "Would you like assistance in drafting content for the Our Services page next?" is visible in the page body</td>
+        <td>In WordPress → Edit Contact page → Find and delete that sentence from the page content → Update</td>
+        <td class="priority-high">High</td>
+      </tr>
+      <tr>
+        <td><strong>Fix /harscaping-page/ URL (misspelled)</strong><br>
+        Should be "hardscaping" not "harscaping"</td>
+        <td>In WordPress → Add a 301 redirect from <code>/harscaping-page/</code> to the correct URL (either <code>/services/hardscaping/</code> or the backyard remodels page). Use Redirection plugin or .htaccess.</td>
+        <td class="priority-high">High</td>
+      </tr>
+      <tr>
+        <td><strong>Delete or redirect /gazebros-landing/</strong><br>
+        Thin, unlinked page hurting crawl budget and quality signals</td>
+        <td>In WordPress → Either add 500+ words of real content + internal links, OR add a 301 redirect to the homepage. If it's a landing page from an old campaign, redirect is best.</td>
+        <td class="priority-high">High</td>
+      </tr>
+      <tr>
+        <td><strong>Add noindex to /author/websitefannmedia-com/</strong><br>
+        Author archive page with no content is being indexed</td>
+        <td>In WordPress → Yoast SEO → Search Appearance → Archives → Author Archives → Set to "No Index". OR add to robots.txt: <code>Disallow: /author/</code></td>
+        <td class="priority-medium">Medium</td>
+      </tr>
+      <tr>
+        <td><strong>Link blog posts from existing pages</strong><br>
+        The 6 blog posts are orphaned (no internal links pointing to them)</td>
+        <td>The new <code>index.html</code> now links all 6 blog posts from the footer. After upload, this is resolved for the homepage. Also add links from relevant service pages (e.g., link the "artificial turf cost" blog post from the turf service page).</td>
+        <td class="priority-high">High</td>
+      </tr>
+      <tr>
+        <td><strong>Add alt text to all portfolio images</strong><br>
+        Portfolio photos in CMS have missing or generic alt text</td>
+        <td>In WordPress → Media Library → Click each portfolio image → Fill in the Alt Text field with descriptive text like "Scottsdale backyard remodel with paver patio and luxury turf — Turfli project"</td>
+        <td class="priority-medium">Medium</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 5 -->
+<div class="page" id="s5">
+  <h1 class="section-title"><span class="num">05</span> Ads Agent Setup</h1>
+
+  <p>The ads agent code is complete and working. It only needs credentials. Full setup instructions are in Sections 5 and 6 of the original implementation guide. Summary of what's needed:</p>
+
+  <h2>Google Ads — 4 Credentials Needed</h2>
+  <ol class="step-list">
+    <li><strong>Developer token</strong> — From Google Ads → Tools &amp; Settings → API Center. Requires applying for Basic Access.</li>
+    <li><strong>OAuth client ID + secret</strong> — From Google Cloud Console → Create a new project → Enable Google Ads API → Create OAuth credentials.</li>
+    <li><strong>Refresh token</strong> — Run the one-time Python OAuth flow from the original guide (Section 5, Step 3).</li>
+    <li><strong>Customer ID</strong> — Your Turfli Google Ads account number (top-right of ads.google.com, without dashes).</li>
+  </ol>
+
+  <h2>Meta Ads — 3 Credentials Needed</h2>
+  <ol class="step-list">
+    <li><strong>App ID + App Secret</strong> — From developers.facebook.com → Create a Business app → Marketing API product → Settings → Basic.</li>
+    <li><strong>Long-lived access token</strong> — From the Graph API Explorer, exchange for 60-day token (see original guide Section 6).</li>
+    <li><strong>Ad Account ID</strong> — From business.facebook.com → Settings → Ad Accounts. Use the number without "act_" prefix.</li>
+  </ol>
+
+  <h2>Running the Agent Once Configured</h2>
+  <p>After filling in <code>ads_agent/config.yml</code>:</p>
+  <code class="cmd">cd /Users/chad/Turfli/Turfli/ads_agent</code>
+  <code class="cmd">pip install -r requirements.txt</code>
+  <code class="cmd">python turfli_ads_agent.py --action report</code>
+
+  <div class="callout tip">
+    <p><strong>Start with a dry run:</strong> Keep <code>dry_run_by_default: true</code> in config.yml for the first few weeks. Review the agent's recommendations before applying any changes. The agent describes every action it would take before doing anything.</p>
+  </div>
+
+  <h2>Meta Token Renewal Reminder</h2>
+  <p>Meta long-lived tokens expire after 60 days. Set a calendar reminder to regenerate at day 55. Future enhancement: switch to a System User token in Meta Business Manager which doesn't expire.</p>
+</div>
+
+<!-- SECTION 6 -->
+<div class="page" id="s6">
+  <h1 class="section-title"><span class="num">06</span> Speed Optimization</h1>
+
+  <p>The guide identified speed as an opportunity. Current hero image is 2048px wide and uncompressed. Target: 70+ PageSpeed on mobile, 90+ on desktop.</p>
+
+  <h2>Hero Image Optimization</h2>
+  <ol class="step-list">
+    <li>
+      <strong>Create three versions of the hero image:</strong><br>
+      — <code>fann-hero-desktop.jpg</code> — 1400px wide, 85 quality (target: under 250KB)<br>
+      — <code>fann-hero-mobile.jpg</code> — 800px wide, 80 quality (target: under 100KB)<br>
+      Use <a href="https://squoosh.app">squoosh.app</a> to compress. Use WebP format for even better compression.
+    </li>
+    <li>
+      <strong>Update the hero CSS in <code>index.html</code></strong> to use the optimized versions:<br>
+      Replace the current <code>.hero-bg</code> background with the compressed desktop version.
+      Add a mobile media query with the smaller version:
+      <pre>
+.hero-bg{background: linear-gradient(...),
+  url('fann-hero-desktop.jpg') center/cover no-repeat}
+@media(max-width:768px){
+  .hero-bg{background-image: linear-gradient(...),
+    url('fann-hero-mobile.jpg');}
+}</pre>
+    </li>
+    <li>
+      <strong>Update the preload tag in <code>&lt;head&gt;</code></strong> to use the compressed filename:<br>
+      <code>&lt;link rel="preload" as="image" href="fann-hero-desktop.jpg"&gt;</code>
+    </li>
+    <li>
+      <strong>Compress all other images</strong> — Portfolio photos, before/after photos, and Instagram grid images should all be under 200KB each. Run them through squoosh.app before uploading.
+    </li>
+  </ol>
+
+  <h2>Additional Speed Wins</h2>
+  <ul>
+    <li>Consider self-hosting the Google Fonts instead of loading from fonts.googleapis.com — saves one render-blocking request</li>
+    <li>All <code>&lt;img&gt;</code> tags already have <code>loading="lazy"</code> and explicit <code>width</code>/<code>height</code> attributes — good</li>
+    <li>After going live, run a PageSpeed Insights test and address any red flags</li>
+  </ul>
+</div>
+
+<!-- SECTION 7 -->
+<div class="page" id="s7">
+  <h1 class="section-title"><span class="num">07</span> Monthly Ongoing Tasks</h1>
+
+  <p>These are recurring tasks that keep the site growing after launch. None are blocking — they compound over time.</p>
+
+  <table>
+    <thead><tr><th>Task</th><th>Frequency</th><th>Impact</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Add one new portfolio project</strong> — New photos, project location, and materials used</td>
+        <td>Monthly</td>
+        <td class="priority-high">High</td>
+      </tr>
+      <tr>
+        <td><strong>Add one new Google review</strong> to the reviews section (copy actual review text + reviewer name from Google)</td>
+        <td>Monthly</td>
+        <td class="priority-high">High</td>
+      </tr>
+      <tr>
+        <td><strong>Publish one blog post</strong> targeting a high-value keyword. Suggested topics:<br>
+        "backyard remodel timeline Scottsdale", "travertine vs porcelain pavers", "best outdoor kitchen appliances Arizona", "how to choose artificial turf color"</td>
+        <td>Monthly</td>
+        <td class="priority-high">High</td>
+      </tr>
+      <tr>
+        <td><strong>Submit new pages to Search Console</strong> after each new blog post or service page</td>
+        <td>Monthly</td>
+        <td class="priority-medium">Medium</td>
+      </tr>
+      <tr>
+        <td><strong>Build one backlink</strong> — Scottsdale neighborhood HOA websites, Arizona lifestyle magazines, local business directories</td>
+        <td>Monthly</td>
+        <td class="priority-high">High</td>
+      </tr>
+      <tr>
+        <td><strong>Run ads agent weekly report</strong> every Monday morning</td>
+        <td>Weekly</td>
+        <td class="priority-high">High (after agent is configured)</td>
+      </tr>
+      <tr>
+        <td><strong>Check AI search visibility</strong> — Search "backyard remodel contractor Scottsdale" in ChatGPT, Perplexity, Google AI Mode, and Gemini. Track whether Turfli appears.</td>
+        <td>Monthly</td>
+        <td class="priority-medium">Medium</td>
+      </tr>
+      <tr>
+        <td><strong>Regenerate Meta access token</strong> (60-day expiry)</td>
+        <td>Every 55 days</td>
+        <td class="priority-high">High (when agent is configured)</td>
+      </tr>
+      <tr>
+        <td><strong>Post project photos to Google Business Profile</strong> after each completed project</td>
+        <td>Per project</td>
+        <td class="priority-high">High</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <p><strong>The highest-leverage action right now:</strong> Build the <code>/services/backyard-remodels/</code> page with 500+ words of content and get it indexed. It already exists in the local files — it just needs to be uploaded and submitted to Search Console. That one page properly indexed is what unlocks the $60–100k project pipeline currently going to Ground Zero Landscape and Luxe Outdoor Environments.</p>
+  </div>
+
+  <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <p style="font-size:.75rem;color:var(--muted)">Generated by Claude Code (Anthropic) for Turfli / Luxury Lawns and Greens LLC · May 27, 2026 · Follows from original Implementation Guide · For internal use only.</p>
+  </div>
+</div>
+
+</body>
+</html>
