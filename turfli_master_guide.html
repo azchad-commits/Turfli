@@ -100,7 +100,7 @@
   <ol>
     <li><a href="#s1">What Was Built &amp; Fixed — Full Status</a></li>
     <li><a href="#s2">Phase 1: Content &amp; Images (Pre-Launch)</a></li>
-    <li><a href="#s3">Phase 2: Hosting &amp; Domain Setup</a></li>
+    <li><a href="#s3">Phase 2: Deploying the New Site to GoDaddy</a></li>
     <li><a href="#s4">Phase 3: Contact Form Handler</a></li>
     <li><a href="#s5">Phase 4: Conversion Tracking (Critical for Ads)</a></li>
     <li><a href="#s6">Phase 5: Go Live &amp; Search Console</a></li>
@@ -118,7 +118,7 @@
   <h1 class="section-title"><span class="num">01</span> What Was Built &amp; Fixed — Full Status</h1>
 
   <div class="callout info">
-    <p><strong>About this site:</strong> Turfli's new website is a static HTML site — no WordPress, no CMS, no database. All files live in the <code>/Turfli/Turfli/</code> folder on GitHub. Hosting is via GitHub Pages or Netlify (see Phase 2). This makes the site extremely fast and secure, but form handling and analytics require third-party services.</p>
+    <p><strong>About this site:</strong> Turfli's new website is a static HTML site — no WordPress, no CMS, no database. All files live in the GitHub repository. The site is deployed to <strong>GoDaddy hosting</strong> (the same account where turfli.com already lives) by uploading the new HTML files to replace the old WordPress files. No new hosting account, no DNS changes — just a file swap on the same server.</p>
   </div>
 
   <div class="callout critical">
@@ -169,9 +169,8 @@
       <tr><td>ROC license number — add actual number to credentials section</td><td>index.html</td><td><span class="badge todo">TODO</span></td></tr>
       <tr><td>Google Ads conversion tag installed on site</td><td>index.html + thank-you page</td><td><span class="badge todo">TODO</span></td></tr>
       <tr><td>Meta Pixel installed on site</td><td>index.html (head)</td><td><span class="badge todo">TODO</span></td></tr>
-      <tr><td>Contact form handler configured</td><td>Formspree or Netlify Forms</td><td><span class="badge todo">TODO</span></td></tr>
-      <tr><td>Site deployed to live hosting</td><td>GitHub Pages or Netlify</td><td><span class="badge todo">TODO</span></td></tr>
-      <tr><td>turfli.com domain pointed to new hosting</td><td>GoDaddy DNS</td><td><span class="badge todo">TODO</span></td></tr>
+      <tr><td>Contact form handler configured</td><td>Formspree</td><td><span class="badge todo">TODO</span></td></tr>
+      <tr><td>WordPress backed up and new HTML files uploaded to GoDaddy</td><td>GoDaddy cPanel / FTP</td><td><span class="badge todo">TODO</span></td></tr>
       <tr><td>Ads agent credentials configured</td><td>ads_agent/config.yml</td><td><span class="badge todo">TODO</span></td></tr>
     </tbody>
   </table>
@@ -236,41 +235,74 @@
 
 <!-- SECTION 3 -->
 <div class="page" id="s3">
-  <h1 class="section-title"><span class="num">03</span> Phase 2: Hosting &amp; Domain Setup</h1>
+  <h1 class="section-title"><span class="num">03</span> Phase 2: Deploying the New Site to GoDaddy</h1>
 
-  <p class="phase-header">One-time setup — enables the site to go live</p>
+  <p class="phase-header">One-time file swap — replaces WordPress with the new static HTML site</p>
 
   <div class="callout info">
-    <p><strong>Recommendation: Use Netlify.</strong> It's free for this traffic level, handles the contact form natively (no third-party needed), auto-deploys from GitHub on every push, and gives you a CDN, HTTPS, and branch previews out of the box. GitHub Pages also works but requires a separate form service.</p>
+    <p><strong>How this works:</strong> turfli.com already points to GoDaddy hosting — that does not change. The WordPress files currently sitting on that server get replaced with the new static HTML files from GitHub. Same domain, same hosting account, same server. The site goes live the moment the new files are uploaded.</p>
   </div>
 
-  <h2>Option A: Deploy on Netlify (Recommended)</h2>
+  <h2>Step 1 — Back Up WordPress First</h2>
+  <p>Before touching anything, download a full backup. You cannot undo a file deletion without one.</p>
   <ol class="step-list">
-    <li>Go to <strong>netlify.com</strong> → Sign up with GitHub → Click "Add new site" → "Import an existing project"</li>
-    <li>Select the <strong>Turfli GitHub repository</strong> → Set publish directory to <code>/</code> (root) → Click Deploy</li>
-    <li>Netlify will assign a temporary URL like <code>turfli-xyz.netlify.app</code>. Test the site works on this URL before pointing the domain.</li>
-    <li>In Netlify → Site settings → Domain management → Add custom domain → Enter <code>turfli.com</code></li>
-    <li>Netlify will show you nameservers or DNS records. Go to GoDaddy → DNS Management for turfli.com → Update DNS to point to Netlify (instructions specific to your setup shown in Netlify).</li>
-    <li>Netlify automatically provisions a free SSL/HTTPS certificate. This takes a few minutes after DNS propagates.</li>
+    <li>Log in to <strong>GoDaddy</strong> → My Products → Web Hosting → <strong>Manage</strong></li>
+    <li>In cPanel → scroll to Files → click <strong>File Manager</strong></li>
+    <li>Navigate into <code>public_html</code> → Select All (Ctrl+A) → Click <strong>Compress</strong> → Create a .zip archive named <code>wordpress-backup-[date].zip</code></li>
+    <li>Right-click the .zip → <strong>Download</strong> — save it to your computer. This is your safety net.</li>
+  </ol>
+  <div class="callout warn">
+    <p><strong>Do not skip the backup.</strong> Once WordPress files are deleted they are gone. The backup takes 5 minutes and protects weeks of work.</p>
+  </div>
+
+  <h2>Step 2 — Download the New Site from GitHub</h2>
+  <ol class="step-list">
+    <li>Go to <strong>github.com</strong> → sign in → open the Turfli repository</li>
+    <li>Click the green <strong>Code</strong> button → <strong>Download ZIP</strong></li>
+    <li>Extract the ZIP on your computer — you'll get a folder called <code>Turfli-main</code> containing all the site files (index.html, services/, locations/, blog/, etc.)</li>
   </ol>
 
-  <h2>Option B: Deploy on GitHub Pages</h2>
+  <h2>Step 3 — Delete the WordPress Files from GoDaddy</h2>
   <ol class="step-list">
-    <li>In the Turfli GitHub repository → Settings → Pages → Source: Deploy from branch → Branch: main → Folder: / (root) → Save</li>
-    <li>GitHub will assign a URL like <code>azchad-commits.github.io/Turfli</code>. Test it works.</li>
-    <li>In GitHub Pages settings → Custom domain → Enter <code>turfli.com</code> → Save</li>
-    <li>In GoDaddy → DNS Management → Add an A record pointing to GitHub's IP addresses:<br>
-      <code>185.199.108.153</code>, <code>185.199.109.153</code>, <code>185.199.110.153</code>, <code>185.199.111.153</code></li>
-    <li>Add a CNAME record: <code>www</code> → <code>azchad-commits.github.io</code></li>
-    <li>Check "Enforce HTTPS" in GitHub Pages settings (once DNS propagates, usually 1–24 hours)</li>
+    <li>In cPanel File Manager → navigate to <code>public_html</code></li>
+    <li>Select the WordPress files and folders: <code>wp-admin/</code>, <code>wp-content/</code>, <code>wp-includes/</code>, <code>wp-config.php</code>, <code>wp-login.php</code>, <code>wp-cron.php</code>, <code>wp-settings.php</code>, <code>wp-load.php</code>, <code>wp-blog-header.php</code>, <code>wp-trackback.php</code>, <code>wp-comments-post.php</code>, <code>index.php</code>, <code>xmlrpc.php</code>, <code>.htaccess</code></li>
+    <li>Delete them all. The backup you created in Step 1 is your safety net.</li>
+    <li><code>public_html</code> should now be empty (or contain only unrelated files from other things hosted on the account)</li>
+  </ol>
+
+  <h2>Step 4 — Upload the New HTML Files via File Manager</h2>
+  <ol class="step-list">
+    <li>In cPanel File Manager, make sure you're in <code>public_html</code></li>
+    <li>Click <strong>Upload</strong> in the toolbar → drag in all the files and folders from the <code>Turfli-main</code> folder you extracted in Step 2</li>
+    <li>Upload everything: <code>index.html</code>, <code>services/</code>, <code>locations/</code>, <code>neighborhoods/</code>, <code>blog/</code>, <code>about-turfli-scottsdale/</code>, <code>contact/</code>, <code>portfolio/</code>, <code>sitemap.xml</code>, <code>robots.txt</code>, all <code>lp-*.html</code> files, and any image files</li>
+    <li>Wait for the upload to complete, then visit <strong>https://turfli.com</strong> — the new site should be live immediately.</li>
+  </ol>
+
+  <h2>Alternative: Upload via FTP (Larger Uploads)</h2>
+  <p>For uploading many files at once, FTP is faster than the browser-based File Manager.</p>
+  <ol class="step-list">
+    <li>In cPanel → scroll to Files → <strong>FTP Accounts</strong> → note your FTP username, password, and server hostname (usually <code>ftp.turfli.com</code> or the server IP)</li>
+    <li>Download <strong>FileZilla</strong> (free at filezilla-project.org) → open it → File → Site Manager → New Site</li>
+    <li>Enter: Host = your FTP hostname, Protocol = FTP, Logon Type = Normal, User = your FTP user, Password = your FTP password → Connect</li>
+    <li>In the right pane (remote server), navigate to <code>public_html</code>. In the left pane (local), navigate to the <code>Turfli-main</code> extracted folder.</li>
+    <li>Select all local files → drag to the right pane → FileZilla uploads everything automatically. Much faster for large batches than the browser uploader.</li>
   </ol>
 
   <div class="callout tip">
-    <p><strong>Future deployments are automatic:</strong> Once set up, every <code>git push</code> to the main branch automatically deploys to the live site. No manual upload steps required — just push code changes and the site updates within minutes.</p>
+    <p><strong>Clean URLs work automatically:</strong> GoDaddy's Apache server serves <code>index.html</code> by default when a folder is requested. So <code>/services/backyard-remodels/</code> automatically serves <code>services/backyard-remodels/index.html</code> — no configuration needed. All 35+ pages will work correctly at their clean URLs as soon as the files are uploaded.</p>
   </div>
 
-  <h2>After DNS Points to New Hosting</h2>
-  <p>DNS changes can take up to 48 hours to fully propagate globally. During this window, some visitors may still see the old site. This is normal. You can verify propagation at <a href="https://dnschecker.org">dnschecker.org</a>.</p>
+  <h2>After Uploading — Immediate Tests</h2>
+  <ol class="step-list">
+    <li>Visit <strong>https://turfli.com</strong> — confirm the new homepage loads, not the old WordPress site</li>
+    <li>Click through a service page: <strong>https://turfli.com/services/artificial-turf-installation/</strong></li>
+    <li>Click through a location page: <strong>https://turfli.com/locations/scottsdale/</strong></li>
+    <li>Test on mobile — the site is fully responsive</li>
+    <li>If you see a WordPress page instead of the new site, clear your browser cache (Ctrl+Shift+R) and try again</li>
+  </ol>
+
+  <h2>Keeping the Site Updated Going Forward</h2>
+  <p>After the initial launch, updating the site is the same process: make changes to the HTML files in GitHub, download the updated ZIP or the specific changed files, upload them to <code>public_html</code> via File Manager or FTP, replacing the old versions. Changes go live immediately on upload — no build process, no server restart.</p>
 </div>
 
 <!-- SECTION 4 -->
@@ -279,31 +311,24 @@
 
   <p class="phase-header">Required — without this, form submissions go nowhere</p>
 
-  <p>The contact form in <code>index.html</code> posts to <code>/contact-submit/</code>. Since this is a static HTML site, there's no server to handle form submissions. You need a third-party form service to receive them and email them to <code>hello@turfli.com</code>.</p>
+  <p>The contact form in <code>index.html</code> posts to <code>/contact-submit/</code>. Since this is a static HTML site hosted on GoDaddy, there's no server-side code to handle form submissions. You need <strong>Formspree</strong> — a third-party service that receives the form data and emails it to <code>hello@turfli.com</code>. Setup takes 10 minutes.</p>
 
-  <h2>Option A: Netlify Forms (Free — If Using Netlify Hosting)</h2>
+  <h2>Set Up Formspree</h2>
   <ol class="step-list">
-    <li>In <code>index.html</code>, find the <code>&lt;form</code> tag in the contact section</li>
-    <li>Add the attribute <code>data-netlify="true"</code> and change <code>action="/contact-submit/"</code> to <code>action="/thank-you/"</code><br>
-      The form tag should look like:<br>
-      <pre>&lt;form method="POST" action="/thank-you/" data-netlify="true" name="contact"&gt;</pre>
-    </li>
-    <li>Create a simple <code>thank-you/index.html</code> page — this is where visitors land after submitting the form. It's also where conversion tracking fires (see Phase 4).</li>
-    <li>In Netlify → Forms → you'll see all submissions here. Set up email notifications: Forms → Settings → Email notifications → add <code>hello@turfli.com</code></li>
-    <li>Deploy — Netlify detects the <code>data-netlify</code> attribute automatically and handles all submissions.</li>
-  </ol>
-
-  <h2>Option B: Formspree (Works with Any Host)</h2>
-  <ol class="step-list">
-    <li>Go to <strong>formspree.io</strong> → Sign up → Create a new form → Choose endpoint URL</li>
-    <li>Formspree gives you an endpoint like <code>https://formspree.io/f/xyzabc123</code></li>
-    <li>In <code>index.html</code>, change the form action to this URL:<br>
+    <li>Go to <strong>formspree.io</strong> → Sign up with your email → Dashboard → <strong>+ New Form</strong></li>
+    <li>Name it "Turfli Contact Form" → Formspree creates a unique endpoint URL like <code>https://formspree.io/f/xyzabc123</code></li>
+    <li>In <code>index.html</code>, find the <code>&lt;form</code> tag in the contact section. Change the <code>action</code> attribute to your Formspree URL:<br>
       <pre>&lt;form method="POST" action="https://formspree.io/f/xyzabc123"&gt;</pre>
     </li>
-    <li>In Formspree settings → set redirect URL to <code>https://turfli.com/thank-you/</code> (after successful submission)</li>
-    <li>Create the <code>thank-you/index.html</code> page (needed for conversion tracking)</li>
-    <li>Free plan: 50 submissions/month. Paid ($10/month): unlimited. For a lead-gen business, paid is worth it.</li>
+    <li>In Formspree → your form → Settings → Notifications → enter <code>hello@turfli.com</code> as the email recipient for new submissions</li>
+    <li>In Formspree → Settings → Redirects → set the success redirect URL to <code>https://turfli.com/thank-you/</code> — this is the page visitors land on after submitting, and where conversion tracking fires</li>
+    <li>Upload the updated <code>index.html</code> to GoDaddy (same upload process as Phase 2)</li>
+    <li>Submit a test form → confirm you receive the email at hello@turfli.com → confirm you land on the thank-you page</li>
   </ol>
+
+  <div class="callout tip">
+    <p><strong>Free vs Paid Formspree:</strong> Free plan allows 50 submissions/month — enough to start. At $10/month, you get unlimited submissions plus spam filtering. A lead-gen business like Turfli should upgrade once the ads are running and leads are coming in.</p>
+  </div>
 
   <h2>Create the Thank-You Page</h2>
   <p>Create <code>/thank-you/index.html</code> — a simple confirmation page that visitors see after submitting the contact form. This page is where your conversion tracking fires. The page content should confirm the submission and set expectations:</p>
@@ -419,18 +444,18 @@ src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&amp;ev=PageView&amp;noscript=1
     <li>Email address verified as correct</li>
     <li>ROC license number added</li>
     <li>Google review link verified</li>
-    <li>Contact form handler configured (Netlify Forms or Formspree)</li>
+    <li>Contact form handler configured (Formspree endpoint added to form action)</li>
     <li>Thank-you page created at <code>/thank-you/</code></li>
     <li>Google Tag and conversion event installed on all pages + thank-you page</li>
     <li>Meta Pixel and Lead event installed on all pages + thank-you page</li>
-    <li>Site tested on the Netlify preview URL or GitHub Pages URL</li>
+    <li>All files tested locally by opening index.html in a browser before uploading</li>
   </ul>
 
   <h2>Go Live Steps</h2>
   <ol class="step-list">
-    <li><strong>Point the domain:</strong> Update GoDaddy DNS as described in Phase 2 (either to Netlify nameservers or GitHub Pages A records). This is the moment the new site goes live for the world.</li>
+    <li><strong>Upload to GoDaddy:</strong> Follow Phase 2 instructions — back up WordPress, delete old files, upload new HTML files via cPanel File Manager or FTP. The site is live the moment the files land on the server. No DNS changes needed.</li>
     <li><strong>Test immediately:</strong> Visit https://turfli.com → confirm the new site loads → test the contact form (submit a test entry and verify you receive an email at hello@turfli.com) → test on mobile.</li>
-    <li><strong>Verify HTTPS:</strong> The browser should show a padlock / "Secure" indicator. Both Netlify and GitHub Pages provide free HTTPS automatically. Google penalizes non-HTTPS sites in rankings.</li>
+    <li><strong>Verify HTTPS:</strong> GoDaddy hosting includes free SSL — the padlock should appear automatically since turfli.com already had SSL on the old site. If the padlock is missing, log in to GoDaddy → cPanel → SSL/TLS → confirm the certificate is active for turfli.com.</li>
     <li><strong>Check all navigation links:</strong> Click through the main nav, footer links, service grid links, and CTA buttons to confirm nothing is broken.</li>
     <li><strong>Validate structured data:</strong> Go to <a href="https://search.google.com/test/rich-results">search.google.com/test/rich-results</a> → enter <code>https://turfli.com</code> → confirm Google detects the LocalBusiness, FAQPage, and Service schemas with no errors.</li>
   </ol>
@@ -778,7 +803,7 @@ Total spend: $3,547 | Total leads: 50 | Blended CPL: $70.94
     <li><strong>Local pack rankings:</strong> Google Business Profile Insights, or Local Dominator (used in original audit)</li>
     <li><strong>Domain Authority:</strong> Moz Free DA Checker, Ahrefs, or SEMRush</li>
     <li><strong>Ads performance (CPL, spend, leads):</strong> <code>python turfli_ads_agent.py --action report</code> every Monday</li>
-    <li><strong>Contact form leads:</strong> Netlify Forms dashboard or Formspree dashboard</li>
+    <li><strong>Contact form leads:</strong> Formspree dashboard → your form → Submissions tab</li>
     <li><strong>AI search visibility:</strong> Manually search "backyard remodel contractor Scottsdale" in ChatGPT, Perplexity, Google AI Mode, and Gemini. Record yes/no each month.</li>
     <li><strong>Conversion tracking health:</strong> Google Ads → Conversions → confirm status shows "Recording conversions"</li>
   </ul>
