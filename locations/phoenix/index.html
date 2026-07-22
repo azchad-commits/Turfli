@@ -47,8 +47,8 @@ img{max-width:100%;display:block}
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:var(--charcoal);height:68px;display:flex;align-items:center;padding:0 40px}
 .nav-inner{max-width:1200px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:var(--font-d);font-size:1.6rem;font-weight:700;color:var(--white);letter-spacing:.04em}
-.nav-logo span{color:var(--copper)}
+.nav-logo{display:flex;align-items:center;gap:.5rem;font-family:var(--font-d);font-size:1.6rem;font-weight:700;color:var(--white);letter-spacing:.04em}.nav-logo-icon{height:2.6rem;width:auto;flex-shrink:0}
+.nav-logo-text span{color:var(--copper)}
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{color:var(--stone);font-size:.85rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--copper)}
@@ -174,7 +174,7 @@ footer{background:#141210;padding:48px 40px 28px}
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">Turfli<span>.</span></a>
+    <a href="/" class="nav-logo"><img src="/assets/flamingo-logo-copper.png" alt="" class="nav-logo-icon"><span class="nav-logo-text">Turfli<span>.</span></span></a>
     <ul class="nav-links">
       <li><a href="/services/backyard-remodels/">Services</a></li>
       <li><a href="/locations/scottsdale/">Locations</a></li>

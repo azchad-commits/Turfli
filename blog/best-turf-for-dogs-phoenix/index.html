@@ -35,8 +35,9 @@ a{color:var(--copper);text-decoration:none}
 a:hover{color:var(--copper-dark)}
 img{max-width:100%;display:block}
 .nav{background:var(--charcoal);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100}
-.nav-logo{font-family:var(--font-d);font-size:1.7rem;font-weight:600;color:var(--white);letter-spacing:.04em}
-.nav-logo span{color:var(--copper)}
+.nav-logo{display:flex;align-items:center;gap:.5rem;font-family:var(--font-d);font-size:1.7rem;font-weight:600;color:var(--white);letter-spacing:.04em}
+.nav-logo-icon{height:2.6rem;width:auto;flex-shrink:0}
+.nav-logo-text span{color:var(--copper)}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:var(--stone);font-size:.85rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--copper)}
@@ -107,7 +108,7 @@ footer a:hover{color:var(--copper)}
 </head>
 <body>
 <nav class="nav">
-  <a href="/" class="nav-logo">Turf<span>li</span></a>
+  <a href="/" class="nav-logo"><img src="/assets/flamingo-logo-copper.png" alt="" class="nav-logo-icon"><span class="nav-logo-text">Turf<span>li</span></span></a>
   <ul class="nav-links">
     <li><a href="/services/">Services</a></li>
     <li><a href="/locations/">Locations</a></li>

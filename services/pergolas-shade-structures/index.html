@@ -17,7 +17,8 @@
 :root{--copper:#b8742a;--copper-dark:#8a5218;--charcoal:#1c1a17;--charcoal-mid:#2e2b25;--stone:#d4c4a8;--stone-pale:#faf7f2;--border:#e2d8c8;--white:#fff;--text-body:#4a4540;--text-muted:#7a7268;--font-d:'Cormorant Garamond',Georgia,serif;--font-b:'Jost',sans-serif}
 html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-b);background:var(--white);color:var(--text-body);line-height:1.6;overflow-x:hidden}img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
 .site-nav{height:68px;background:var(--charcoal);display:flex;align-items:center;padding:0 2.5rem;gap:2.5rem;position:sticky;top:0;z-index:100}
-.nav-logo{font-family:var(--font-d);font-size:1.4rem;font-weight:600;letter-spacing:.18em;color:#fff;text-transform:uppercase;flex-shrink:0}
+.nav-logo{display:flex;align-items:center;gap:.5rem;font-family:var(--font-d);font-size:1.4rem;font-weight:600;letter-spacing:.18em;color:#fff;text-transform:uppercase;flex-shrink:0}
+.nav-logo-icon{height:2.3rem;width:auto;flex-shrink:0}
 .nav-logo small{display:block;font-size:.46rem;letter-spacing:.28em;color:var(--stone);font-weight:300;font-family:var(--font-b)}
 .nav-links{display:flex;gap:2rem;align-items:center;flex:1;justify-content:center}
 .nav-links a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:400;transition:color .2s}
@@ -84,7 +85,7 @@ footer{background:var(--charcoal-mid);padding:3.5rem 2.5rem 2rem}
 </head>
 <body>
 <nav class="site-nav" aria-label="Main navigation">
-  <a href="/" class="nav-logo">TURFL<span style="text-transform:lowercase">i</span><small>Luxury Outdoor Living</small></a>
+  <a href="/" class="nav-logo"><img src="/assets/flamingo-logo-copper.png" alt="" class="nav-logo-icon"><span class="nav-logo-text">TURFL<span style="text-transform:lowercase">i</span><small>Luxury Outdoor Living</small></span></a>
   <div class="nav-links">
     <a href="/services/artificial-turf-installation/">Artificial Turf</a>
     <a href="/services/backyard-remodels/">Backyard Remodels</a>

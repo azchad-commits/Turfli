@@ -180,7 +180,9 @@ button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
 /* ─── NAV ─── */
 nav{position:sticky;top:0;z-index:200;background:rgba(28,26,23,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,196,168,.1)}
 .nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 2rem;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.nav-logo{display:flex;flex-direction:column;gap:1px;flex-shrink:0}
+.nav-logo{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
+.nav-logo-icon{height:2.5rem;width:auto;flex-shrink:0}
+.nav-logo-text{display:flex;flex-direction:column;gap:1px}
 .nav-logo-name{font-family:var(--font-display);font-size:1.55rem;font-weight:600;letter-spacing:.2em;color:var(--white);text-transform:uppercase;line-height:1}
 .nav-logo-tag{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);font-weight:300}
 .nav-links{display:flex;align-items:center;gap:1.75rem}
@@ -496,8 +498,8 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
 <nav role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Turfli — Luxury Outdoor Living">
-      <span class="nav-logo-name">TURFL<span style="text-transform:lowercase">i</span></span>
-      <span class="nav-logo-tag">Luxury Outdoor Living</span>
+      <img src="/assets/flamingo-logo-copper.png" alt="" class="nav-logo-icon">
+      <span class="nav-logo-text"><span class="nav-logo-name">TURFL<span style="text-transform:lowercase">i</span></span><span class="nav-logo-tag">Luxury Outdoor Living</span></span>
     </a>
     <div class="nav-links" role="list">
       <a href="#services" role="listitem">Services</a>
@@ -1243,9 +1245,9 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
     <div class="footer-top">
       <div class="footer-brand">
         <a href="/" class="nav-logo" aria-label="Turfli home">
-          <span class="nav-logo-name">TURFL<span style="text-transform:lowercase">i</span></span>
-          <span class="nav-logo-tag">Luxury Outdoor Living</span>
-        </a>
+      <img src="/assets/flamingo-logo-copper.png" alt="" class="nav-logo-icon">
+      <span class="nav-logo-text"><span class="nav-logo-name">TURFL<span style="text-transform:lowercase">i</span></span><span class="nav-logo-tag">Luxury Outdoor Living</span></span>
+    </a>
         <p>Design-build outdoor living contractor serving Scottsdale and the Phoenix metro. ROC licensed. BBB A+. 15-year warranty.</p>
         <div class="footer-social" aria-label="Social media">
           <a href="https://www.instagram.com/turfliluxurylawns" target="_blank" rel="noopener" aria-label="Follow @turfliluxurylawns on Instagram">
