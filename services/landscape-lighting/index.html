@@ -68,7 +68,10 @@ html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-b);backgr
 footer{background:var(--charcoal-mid);padding:3.5rem 2.5rem 2rem}
 .fi{max-width:1200px;margin:0 auto}
 .ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(212,196,168,.1)}
-.fb{font-family:var(--font-d);font-size:1.3rem;font-weight:600;letter-spacing:.18em;color:#fff;text-transform:uppercase;margin-bottom:.75rem}
+.fb-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.75rem}
+.fb-icon{height:2rem;width:auto;flex-shrink:0}
+.fb{font-family:var(--font-d);font-size:1.3rem;font-weight:600;color:#fff}
+.fb span{color:var(--copper)}
 .fb small{display:block;font-size:.46rem;letter-spacing:.25em;color:var(--stone);font-weight:300;font-family:var(--font-b)}
 .ftag{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.7;font-weight:300;margin-bottom:1.5rem;max-width:280px}
 .fcol h4{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:1rem}
@@ -166,7 +169,7 @@ footer{background:var(--charcoal-mid);padding:3.5rem 2.5rem 2rem}
 <footer aria-label="Site footer">
   <div class="fi">
     <div class="ft">
-      <div><p class="fb">TURFL<span style="text-transform:lowercase">i</span><small>Luxury Outdoor Living</small></p><p class="ftag">Scottsdale's design-build outdoor living contractor. ROC licensed, fully insured, 5.0 stars.</p></div>
+      <div><div class="fb-row"><img src="/assets/flamingo-logo-copper.png" alt="" class="fb-icon"><p class="fb">Turfli<span>.</span></p></div><p class="ftag">Scottsdale's design-build outdoor living contractor. ROC licensed, fully insured, 5.0 stars.</p></div>
       <div class="fcol"><h4>Services</h4><ul><li><a href="/services/artificial-turf-installation/">Artificial Turf</a></li><li><a href="/services/backyard-remodels/">Backyard Remodels</a></li><li><a href="/services/pavers-patios/">Pavers &amp; Patios</a></li><li><a href="/services/outdoor-kitchens/">Outdoor Kitchens</a></li><li><a href="/services/putting-greens/">Putting Greens</a></li><li><a href="/services/pet-turf/">Pet Turf</a></li><li><a href="/services/pergolas-shade-structures/">Pergolas</a></li><li><a href="/services/landscape-lighting/">Lighting</a></li></ul></div>
       <div class="fcol"><h4>Locations</h4><ul><li><a href="/locations/scottsdale/">Scottsdale</a></li><li><a href="/locations/paradise-valley/">Paradise Valley</a></li><li><a href="/locations/phoenix/">Phoenix</a></li><li><a href="/locations/chandler/">Chandler</a></li><li><a href="/locations/gilbert/">Gilbert</a></li><li><a href="/locations/mesa/">Mesa</a></li><li><a href="/locations/cave-creek/">Cave Creek</a></li></ul></div>
       <div class="fcol"><h4>Company</h4><ul><li><a href="/portfolio/">Portfolio</a></li><li><a href="/about-turfli-scottsdale/">About</a></li><li><a href="/contact/">Get a Quote</a></li><li><a href="tel:+14804050725">(480) 405-0725</a></li></ul></div>
