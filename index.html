@@ -344,8 +344,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,26,23,.97);backdrop-fil
 .ba-item{overflow:hidden}
 .ba-photo{position:relative;overflow:hidden;height:280px}
 .ba-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
-.ba-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;height:280px}
-.ba-mosaic img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
+.ba-mosaic{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;height:280px}
+.ba-mosaic img{width:100%;height:100%;min-height:0;object-fit:cover;filter:saturate(.8);display:block}
 .ba-title{padding:1.2rem 1.25rem;background:var(--charcoal-mid)}
 .ba-project{font-family:var(--font-display);font-size:1rem;font-weight:400;color:var(--white)}
 .ba-detail{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-top:.2rem}
