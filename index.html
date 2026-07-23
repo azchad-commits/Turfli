@@ -342,11 +342,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,26,23,.97);backdrop-fil
 .before-after-inner{max-width:var(--max-w);margin:0 auto}
 .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3rem;background:rgba(255,255,255,.04)}
 .ba-item{overflow:hidden}
-.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;height:240px}
-.ba-panel{position:relative;overflow:hidden}
-.ba-panel img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
-.ba-label{position:absolute;bottom:.75rem;left:.75rem;background:rgba(20,18,15,.85);color:rgba(255,255,255,.8);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;padding:.28rem .6rem;border-radius:1px;font-weight:500}
-.ba-label.after{background:var(--copper);color:#fff}
+.ba-photo{position:relative;overflow:hidden;height:280px}
+.ba-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
 .ba-title{padding:1.2rem 1.25rem;background:var(--charcoal-mid)}
 .ba-project{font-family:var(--font-display);font-size:1rem;font-weight:400;color:var(--white)}
 .ba-detail{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-top:.2rem}
@@ -888,23 +885,16 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
   </div>
 </section>
 
-<!-- BEFORE / AFTER -->
+<!-- TRANSFORMATIONS -->
 <section class="before-after" aria-labelledby="ba-heading">
   <div class="before-after-inner">
     <p class="section-eyebrow" style="color:var(--stone)">Transformations</p>
-    <h2 class="section-title section-title-white" id="ba-heading">Before &amp; After</h2>
+    <h2 class="section-title section-title-white" id="ba-heading">Recent Transformations</h2>
     <p class="section-sub" style="color:rgba(255,255,255,.55)">See what a complete Turfli transformation looks like in Scottsdale and Paradise Valley backyards.</p>
     <div class="ba-grid" role="list">
       <div class="ba-item" role="listitem">
-        <div class="ba-pair">
-          <div class="ba-panel">
-            <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&q=70" alt="Dead grass backyard before Turfli transformation" loading="lazy">
-            <span class="ba-label">Before</span>
-          </div>
-          <div class="ba-panel">
-            <img src="/images/pavers-patios/Pavers (2).jpeg" alt="Luxury turf and paver patio after Turfli installation" loading="lazy">
-            <span class="ba-label after">After</span>
-          </div>
+        <div class="ba-photo">
+          <img src="/images/pavers-patios/Pavers (2).jpeg" alt="Luxury turf and paver patio installed by Turfli" loading="lazy">
         </div>
         <div class="ba-title">
           <p class="ba-project">Full Backyard Remodel</p>
@@ -912,15 +902,8 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
         </div>
       </div>
       <div class="ba-item" role="listitem">
-        <div class="ba-pair">
-          <div class="ba-panel">
-            <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?w=400&q=70" alt="Empty concrete slab before outdoor kitchen install" loading="lazy">
-            <span class="ba-label">Before</span>
-          </div>
-          <div class="ba-panel">
-            <img src="/images/outdoor-kitchens/IMG_7817.JPG" alt="Custom outdoor kitchen installed by Turfli" loading="lazy">
-            <span class="ba-label after">After</span>
-          </div>
+        <div class="ba-photo">
+          <img src="/images/outdoor-kitchens/IMG_7817.JPG" alt="Custom outdoor kitchen installed by Turfli" loading="lazy">
         </div>
         <div class="ba-title">
           <p class="ba-project">Outdoor Kitchen Build</p>
@@ -928,15 +911,8 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
         </div>
       </div>
       <div class="ba-item" role="listitem">
-        <div class="ba-pair">
-          <div class="ba-panel">
-            <img src="https://images.unsplash.com/photo-1550159930-40066082a4fc?w=400&q=70" alt="Overgrown patchy backyard before Turfli" loading="lazy">
-            <span class="ba-label">Before</span>
-          </div>
-          <div class="ba-panel">
-            <img src="/images/putting-greens/IMG_1578.jpeg" alt="Luxury putting green installed by Turfli" loading="lazy">
-            <span class="ba-label after">After</span>
-          </div>
+        <div class="ba-photo">
+          <img src="/images/putting-greens/IMG_1578.jpeg" alt="Luxury putting green installed by Turfli" loading="lazy">
         </div>
         <div class="ba-title">
           <p class="ba-project">Putting Green Transformation</p>
