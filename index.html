@@ -340,10 +340,12 @@ nav{position:sticky;top:0;z-index:200;background:rgba(28,26,23,.97);backdrop-fil
 /* ─── BEFORE / AFTER ─── */
 .before-after{background:var(--charcoal);padding:6rem 2rem}
 .before-after-inner{max-width:var(--max-w);margin:0 auto}
-.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:3rem;background:rgba(255,255,255,.04)}
+.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:3rem;background:rgba(255,255,255,.04)}
 .ba-item{overflow:hidden}
 .ba-photo{position:relative;overflow:hidden;height:280px}
 .ba-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
+.ba-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;height:280px}
+.ba-mosaic img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
 .ba-title{padding:1.2rem 1.25rem;background:var(--charcoal-mid)}
 .ba-project{font-family:var(--font-display);font-size:1rem;font-weight:400;color:var(--white)}
 .ba-detail{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-top:.2rem}
@@ -892,6 +894,18 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
     <h2 class="section-title section-title-white" id="ba-heading">Recent Transformations</h2>
     <p class="section-sub" style="color:rgba(255,255,255,.55)">See what a complete Turfli transformation looks like in Scottsdale and Paradise Valley backyards.</p>
     <div class="ba-grid" role="list">
+      <div class="ba-item" role="listitem">
+        <div class="ba-mosaic">
+          <img src="/images/backyard-remodels/full-remodel-exterior-dusk.jpeg" alt="Full backyard remodel exterior at dusk by Turfli" loading="lazy">
+          <img src="/images/backyard-remodels/full-remodel-fire-pit-cabana.jpeg" alt="Sunken fire pit and cabana bar by Turfli" loading="lazy">
+          <img src="/images/backyard-remodels/full-remodel-turf-patio.jpeg" alt="Turf and stamped concrete patio by Turfli" loading="lazy">
+          <img src="/images/backyard-remodels/full-remodel-turf-yard.jpeg" alt="Full backyard turf and patio by Turfli" loading="lazy">
+        </div>
+        <div class="ba-title">
+          <p class="ba-project">Full Backyard Remodel</p>
+          <p class="ba-detail">Phoenix · Turf · Fire Pit · Cabana · Patio</p>
+        </div>
+      </div>
       <div class="ba-item" role="listitem">
         <div class="ba-photo">
           <img src="/images/pavers-patios/paver-patio-fire-pit-putting-green.jpeg" alt="Travertine paver patio with fire pit and putting green by Turfli" loading="lazy">
