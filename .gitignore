@@ -1,2 +1,13 @@
 .DS_Store
 Turfli Photos/
+
+# Internal-only planning docs / scripts — not part of the public site
+turfli_website.html
+turfli_master_guide.html
+turfli_implementation_guide.html
+turfli_remaining_tasks.html
+turf-calculator.pdf
+turfli_agency_report_claude.pdf
+turfli_final_analysis.pdf
+turfli_final_analysis 2.pdf
+ads_agent/
