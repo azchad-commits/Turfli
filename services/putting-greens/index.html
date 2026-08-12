@@ -127,6 +127,22 @@ footer{background:var(--charcoal-mid);padding:3.5rem 2.5rem 2rem}
 @media(max-width:900px){.sp{grid-template-columns:1fr}.sp-img{display:none}.g3{grid-template-columns:1fr}.proc{grid-template-columns:1fr 1fr}.ft{grid-template-columns:1fr 1fr;gap:2rem}.nav-links{display:none}}
 @media(max-width:600px){.proc{grid-template-columns:1fr}.ft{grid-template-columns:1fr}}
 </style>
+
+<style>
+.qf-sec{background:#1c1a17;padding:64px 5%}
+.qf-wrap{max-width:640px;margin:0 auto;background:#faf7f2;border-radius:8px;padding:2.25rem 2rem;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.qf-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;font-weight:600;color:#1c1a17;margin:0 0 .35rem;line-height:1.2}
+.qf-sub{font-size:.92rem;color:#7a7268;margin:0 0 1.4rem}
+.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.qf-g{margin-bottom:1rem;display:flex;flex-direction:column}
+.qf-g label{font-size:.78rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#4a4540;margin-bottom:.35rem}
+.qf-g input,.qf-g select,.qf-g textarea{font-family:inherit;font-size:.95rem;padding:.7rem .8rem;border:1px solid #e2d8c8;border-radius:4px;background:#fff;color:#2e2b25;width:100%}
+.qf-g textarea{min-height:82px;resize:vertical}
+.qf-btn{width:100%;background:#b8742a;color:#fff;border:none;padding:.95rem;font-size:1rem;font-weight:700;border-radius:4px;cursor:pointer;font-family:inherit}
+.qf-btn:hover{background:#8a5218}
+.qf-note{font-size:.78rem;color:#7a7268;text-align:center;margin:.75rem 0 0}
+@media(max-width:600px){.qf-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <nav class="site-nav" aria-label="Main navigation">
@@ -236,6 +252,39 @@ footer{background:var(--charcoal-mid);padding:3.5rem 2.5rem 2rem}
     <div class="faq-item"><details><summary>Can you build real breaks and slopes into the green?</summary><p>Yes — that's the core of what sets our greens apart. We excavate, regrade, and shape the base to produce the exact breaks and undulations you want. You walk through the design with us before we break ground so you approve every contour.</p></details></div>
     <div class="faq-item"><details><summary>Does synthetic turf hold up as a putting surface in Arizona heat?</summary><p>Yes. The Tigerturf surfaces we install are specifically engineered for outdoor putting in UV and extreme-heat environments. Fiber performance, ball roll consistency, and surface texture are maintained year-round. Surface temperatures on hot days are higher than natural grass — morning or evening use, or adding shade, is recommended in peak summer.</p></details></div>
     <div class="faq-item"><details><summary>Can you add lighting for evening putting?</summary><p>Absolutely. We integrate low-voltage LED landscape lighting into most Luxury and Estate packages. Lighting can also be added as an upgrade to any green. We design the fixtures to illuminate the green without creating glare on the putting line.</p></details></div>
+  </div>
+</section>
+
+
+<!-- QUOTE FORM -->
+<section class="qf-sec" id="quote-form" aria-labelledby="qf-h">
+  <div class="qf-wrap">
+    <h2 class="qf-title" id="qf-h">Design Your Putting Green</h2>
+    <p class="qf-sub">Free on-site design consultation. We'll call within 1 business hour.</p>
+    <form name="putting-greens-quote" method="POST" action="/thanks/" netlify aria-label="Free quote request">
+      <input type="hidden" name="form-name" value="putting-greens-quote">
+      <input type="hidden" name="source" value="site-services-putting-greens">
+      <div class="qf-row">
+        <div class="qf-g">
+          <label for="putting-greens-quote-fname">First Name</label>
+          <input type="text" id="putting-greens-quote-fname" name="first-name" autocomplete="given-name" required>
+        </div>
+        <div class="qf-g">
+          <label for="putting-greens-quote-phone">Phone Number</label>
+          <input type="tel" id="putting-greens-quote-phone" name="phone" autocomplete="tel" required>
+        </div>
+      </div>
+      <div class="qf-g">
+        <label for="putting-greens-quote-city">Your City / Neighborhood</label>
+        <input type="text" id="putting-greens-quote-city" name="city" placeholder="e.g. Troon North, DC Ranch">
+      </div>
+      <div class="qf-g">
+        <label for="putting-greens-quote-notes">Tell us about your project</label>
+        <textarea id="putting-greens-quote-notes" name="notes" placeholder="Approximate size, HOA community, pets, timeline..."></textarea>
+      </div>
+      <button type="submit" class="qf-btn">Get My Free Quote &rarr;</button>
+      <p class="qf-note">No spam. We'll call you within 1 business hour.</p>
+    </form>
   </div>
 </section>
 
