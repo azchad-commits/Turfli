@@ -192,6 +192,22 @@ footer a:hover{color:var(--copper)}
   .process-steps{grid-template-columns:1fr}
 }
 </style>
+
+<style>
+.qf-sec{background:#1c1a17;padding:64px 5%}
+.qf-wrap{max-width:640px;margin:0 auto;background:#faf7f2;border-radius:8px;padding:2.25rem 2rem;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.qf-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;font-weight:600;color:#1c1a17;margin:0 0 .35rem;line-height:1.2}
+.qf-sub{font-size:.92rem;color:#7a7268;margin:0 0 1.4rem}
+.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.qf-g{margin-bottom:1rem;display:flex;flex-direction:column}
+.qf-g label{font-size:.78rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#4a4540;margin-bottom:.35rem}
+.qf-g input,.qf-g select,.qf-g textarea{font-family:inherit;font-size:.95rem;padding:.7rem .8rem;border:1px solid #e2d8c8;border-radius:4px;background:#fff;color:#2e2b25;width:100%}
+.qf-g textarea{min-height:82px;resize:vertical}
+.qf-btn{width:100%;background:#b8742a;color:#fff;border:none;padding:.95rem;font-size:1rem;font-weight:700;border-radius:4px;cursor:pointer;font-family:inherit}
+.qf-btn:hover{background:#8a5218}
+.qf-note{font-size:.78rem;color:#7a7268;text-align:center;margin:.75rem 0 0}
+@media(max-width:600px){.qf-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -419,6 +435,31 @@ footer a:hover{color:var(--copper)}
     <summary>What does a complete PV landscape design project typically cost?</summary>
     <p>Estate landscape design projects in Paradise Valley typically range from $120,000 to $600,000+ depending on property size, scope, and material selections. Design fees are typically 10–15% of the installation value and are credited toward installation if we're selected to build. We provide a detailed scope-of-work proposal before any work begins.</p>
   </details>
+</section>
+
+
+<!-- QUOTE FORM -->
+<section class="qf-sec" id="quote-form" aria-labelledby="qf-h">
+  <div class="qf-wrap">
+    <h2 class="qf-title" id="qf-h">Get Your Free Landscape Design Quote</h2>
+    <p class="qf-sub">Free on-site consultation and itemized pricing. We'll call within 1 business hour.</p>
+    <form name="locations-paradise-valley-landscape-design-quote" method="POST" action="/thanks/" netlify aria-label="Free quote request">
+      <input type="hidden" name="form-name" value="locations-paradise-valley-landscape-design-quote">
+      <input type="hidden" name="source" value="site-locations-paradise-valley-landscape-design">
+      <div class="qf-row">
+        <div class="qf-g"><label for="locations-paradise-valley-landscape-design-quote-fn">First Name</label>
+          <input type="text" id="locations-paradise-valley-landscape-design-quote-fn" name="first-name" autocomplete="given-name" required></div>
+        <div class="qf-g"><label for="locations-paradise-valley-landscape-design-quote-ph">Phone Number</label>
+          <input type="tel" id="locations-paradise-valley-landscape-design-quote-ph" name="phone" autocomplete="tel" required></div>
+      </div>
+      <div class="qf-g"><label for="locations-paradise-valley-landscape-design-quote-city">Your City / Neighborhood</label>
+        <input type="text" id="locations-paradise-valley-landscape-design-quote-city" name="city" placeholder="e.g. North Scottsdale, Paradise Valley"></div>
+      <div class="qf-g"><label for="locations-paradise-valley-landscape-design-quote-notes">Tell us about your project</label>
+        <textarea id="locations-paradise-valley-landscape-design-quote-notes" name="notes" placeholder="Approximate size, HOA community, timeline..."></textarea></div>
+      <button type="submit" class="qf-btn">Get My Free Quote &rarr;</button>
+      <p class="qf-note">No spam. We'll call you within 1 business hour.</p>
+    </form>
+  </div>
 </section>
 
 <footer>

@@ -76,6 +76,22 @@ footer{background:#141210;padding:40px 40px 24px}.footer-inner{max-width:1200px;
 @media(max-width:900px){.split-grid{grid-template-columns:1fr;gap:32px}.cards-grid{grid-template-columns:1fr 1fr}.hero-content{padding:0 40px}.hero-content h1{font-size:2.4rem}}
 @media(max-width:600px){.nav-links{display:none}.section,.section-dark{padding:52px 24px}.bc{padding:12px 24px}.hero{height:420px}.hero-content{padding:0 28px}.hero-content h1{font-size:2rem}.cards-grid{grid-template-columns:1fr}.price-row{grid-template-columns:1fr 1fr}.cta-band{padding:52px 24px}footer{padding:32px 24px 20px}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
 </style>
+
+<style>
+.qf-sec{background:#1c1a17;padding:64px 5%}
+.qf-wrap{max-width:640px;margin:0 auto;background:#faf7f2;border-radius:8px;padding:2.25rem 2rem;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.qf-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;font-weight:600;color:#1c1a17;margin:0 0 .35rem;line-height:1.2}
+.qf-sub{font-size:.92rem;color:#7a7268;margin:0 0 1.4rem}
+.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.qf-g{margin-bottom:1rem;display:flex;flex-direction:column}
+.qf-g label{font-size:.78rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#4a4540;margin-bottom:.35rem}
+.qf-g input,.qf-g select,.qf-g textarea{font-family:inherit;font-size:.95rem;padding:.7rem .8rem;border:1px solid #e2d8c8;border-radius:4px;background:#fff;color:#2e2b25;width:100%}
+.qf-g textarea{min-height:82px;resize:vertical}
+.qf-btn{width:100%;background:#b8742a;color:#fff;border:none;padding:.95rem;font-size:1rem;font-weight:700;border-radius:4px;cursor:pointer;font-family:inherit}
+.qf-btn:hover{background:#8a5218}
+.qf-note{font-size:.78rem;color:#7a7268;text-align:center;margin:.75rem 0 0}
+@media(max-width:600px){.qf-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <nav class="nav">
@@ -204,6 +220,31 @@ footer{background:#141210;padding:40px 40px 24px}.footer-inner{max-width:1200px;
     <a href="tel:+14804050725" class="btn-outline-white">(480) 405-0725</a>
   </div>
 </div>
+
+
+<!-- QUOTE FORM -->
+<section class="qf-sec" id="quote-form" aria-labelledby="qf-h">
+  <div class="qf-wrap">
+    <h2 class="qf-title" id="qf-h">Get Your Free Artificial Turf Installation Quote</h2>
+    <p class="qf-sub">Free on-site consultation and itemized pricing. We'll call within 1 business hour.</p>
+    <form name="locations-scottsdale-artificial-turf-installation-quote" method="POST" action="/thanks/" netlify aria-label="Free quote request">
+      <input type="hidden" name="form-name" value="locations-scottsdale-artificial-turf-installation-quote">
+      <input type="hidden" name="source" value="site-locations-scottsdale-artificial-turf-installation">
+      <div class="qf-row">
+        <div class="qf-g"><label for="locations-scottsdale-artificial-turf-installation-quote-fn">First Name</label>
+          <input type="text" id="locations-scottsdale-artificial-turf-installation-quote-fn" name="first-name" autocomplete="given-name" required></div>
+        <div class="qf-g"><label for="locations-scottsdale-artificial-turf-installation-quote-ph">Phone Number</label>
+          <input type="tel" id="locations-scottsdale-artificial-turf-installation-quote-ph" name="phone" autocomplete="tel" required></div>
+      </div>
+      <div class="qf-g"><label for="locations-scottsdale-artificial-turf-installation-quote-city">Your City / Neighborhood</label>
+        <input type="text" id="locations-scottsdale-artificial-turf-installation-quote-city" name="city" placeholder="e.g. North Scottsdale, Paradise Valley"></div>
+      <div class="qf-g"><label for="locations-scottsdale-artificial-turf-installation-quote-notes">Tell us about your project</label>
+        <textarea id="locations-scottsdale-artificial-turf-installation-quote-notes" name="notes" placeholder="Approximate size, HOA community, timeline..."></textarea></div>
+      <button type="submit" class="qf-btn">Get My Free Quote &rarr;</button>
+      <p class="qf-note">No spam. We'll call you within 1 business hour.</p>
+    </form>
+  </div>
+</section>
 
 <footer>
   <div class="footer-inner">
