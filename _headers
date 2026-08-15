@@ -1,0 +1,36 @@
+# Netlify headers.
+# Netlify's default for a static site is `cache-control: public,max-age=0,must-revalidate`
+# on EVERYTHING — including images. That forces a revalidation round-trip on every asset,
+# every visit, which drives unnecessary bandwidth (the site hit a usage limit on 2026-08-15).
+# Photos and icons here are stable, so they get long cache lifetimes. HTML stays
+# must-revalidate so content edits go live immediately.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# --- Project photography: stable, cache hard ---
+/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+# --- Site assets (logo, OG image, icons) ---
+/assets/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+# --- Favicons / touch icons ---
+/favicon.ico
+  Cache-Control: public, max-age=604800
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
+/apple-touch-icon-precomposed.png
+  Cache-Control: public, max-age=604800
+
+# --- Hero image referenced from the site root ---
+/fann-344-scaled-e1748393192373-2048x1334.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+# --- HTML: always revalidate so edits publish immediately ---
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
