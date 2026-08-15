@@ -1,13 +1,21 @@
-.DS_Store
-Turfli Photos/
-
-# Internal-only planning docs / scripts — not part of the public site
-turfli_website.html
-turfli_master_guide.html
-turfli_implementation_guide.html
-turfli_remaining_tasks.html
-turf-calculator.pdf
-turfli_agency_report_claude.pdf
-turfli_final_analysis.pdf
-turfli_final_analysis 2.pdf
-ads_agent/
+# Internal / source material — must never be published to the public site
+IMG_*.PNG
+assets/Ad Copy*
+assets/Curtis Frank.png
+assets/Karl Baum.png
+assets/Instagram.html
+assets/Instagram_files/
+assets/*.pdf
+assets/*.tif
+assets/no_shadow*
+assets/2C10AB8C-*.PNG
+assets/6FF57FFC-*.PNG
+assets/92968142-*.PNG
+assets/*-cc_ft_*.jpeg
+assets/photo-*.jpeg
+assets/479148185_*.jpg
+assets/edf3fa6*.jpeg
+assets/bdce3e2*.jpeg
+assets/Flamingo_Logo_Cooper.png
+assets/Image*.png
+assets/Screenshot*.png
