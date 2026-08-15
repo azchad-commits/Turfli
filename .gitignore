@@ -19,3 +19,13 @@ assets/bdce3e2*.jpeg
 assets/Flamingo_Logo_Cooper.png
 assets/Image*.png
 assets/Screenshot*.png
+
+# --- macOS cruft ---
+.DS_Store
+**/.DS_Store
+
+# --- Raw photo library (637 MB of originals + zips; not for deploy) ---
+Turfli Photos/
+
+# --- Belt-and-braces: Netlify rejects any deployed filename containing '#' ---
+*#*
