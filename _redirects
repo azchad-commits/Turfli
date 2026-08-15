@@ -1,0 +1,39 @@
+# Netlify redirects — legacy URLs from the previous Turfli site.
+# These were generating 404s from Google's index, old backlinks, and stale ad assets.
+# 301 = permanent, so search engines transfer ranking signal to the new URL.
+
+# --- Old service URLs (renamed slugs) ---
+/artificial-turf                                       /services/artificial-turf-installation/   301
+/artificial-turf/                                      /services/artificial-turf-installation/   301
+/services/artificial-grass-installation                /services/artificial-turf-installation/   301
+/services/artificial-grass-installation/               /services/artificial-turf-installation/   301
+/services/commercial-artificial-grass-installation     /services/artificial-turf-installation/   301
+/services/commercial-artificial-grass-installation/    /services/artificial-turf-installation/   301
+/services/pet-friendly-artificial-grass-installation   /services/pet-turf/                       301
+/services/pet-friendly-artificial-grass-installation/  /services/pet-turf/                       301
+/services/custom-putting-green-installation            /services/putting-greens/                 301
+/services/custom-putting-green-installation/           /services/putting-greens/                 301
+/landscape-redesign-backyard-remodel                   /services/backyard-remodels/              301
+/landscape-redesign-backyard-remodel/                  /services/backyard-remodels/              301
+
+# --- Pages that no longer exist as standalone URLs ---
+/pricing-guide                                         /services/artificial-turf-installation/   301
+/pricing-guide/                                        /services/artificial-turf-installation/   301
+/about                                                 /about-turfli-scottsdale/                 301
+/about/                                                /about-turfli-scottsdale/                 301
+/gallery                                               /portfolio/                               301
+/gallery/                                              /portfolio/                               301
+/quote                                                 /contact/                                 301
+/quote/                                                /contact/                                 301
+/estimate                                              /contact/                                 301
+/estimate/                                             /contact/                                 301
+/free-quote                                            /contact/                                 301
+/free-quote/                                           /contact/                                 301
+
+# --- Sections that became homepage anchors ---
+/reviews                                               /#reviews                                 301
+/reviews/                                              /#reviews                                 301
+/testimonials                                          /#reviews                                 301
+/testimonials/                                         /#reviews                                 301
+/faq                                                   /#faq                                     301
+/faq/                                                  /#faq                                     301
