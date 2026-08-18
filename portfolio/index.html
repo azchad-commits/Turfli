@@ -144,6 +144,19 @@ footer a:hover{color:var(--copper)}
   .portfolio-grid{grid-template-columns:1fr}
   .ig-grid{grid-template-columns:repeat(3,1fr)}
 }
+.qf-sec{background:#1c1a17;padding:64px 5%}
+.qf-wrap{max-width:640px;margin:0 auto;background:#faf7f2;border-radius:8px;padding:2.25rem 2rem;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.qf-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;font-weight:600;color:#1c1a17;margin:0 0 .35rem;line-height:1.2}
+.qf-sub{font-size:.92rem;color:#7a7268;margin:0 0 1.4rem}
+.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.qf-g{margin-bottom:1rem;display:flex;flex-direction:column}
+.qf-g label{font-size:.78rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#4a4540;margin-bottom:.35rem}
+.qf-g input,.qf-g select,.qf-g textarea{font-family:inherit;font-size:.95rem;padding:.7rem .8rem;border:1px solid #e2d8c8;border-radius:4px;background:#fff;color:#2e2b25;width:100%}
+.qf-g textarea{min-height:82px;resize:vertical}
+.qf-btn{width:100%;background:#b8742a;color:#fff;border:none;padding:.95rem;font-size:1rem;font-weight:700;border-radius:4px;cursor:pointer;font-family:inherit}
+.qf-btn:hover{background:#8a5218}
+.qf-note{font-size:.78rem;color:#7a7268;text-align:center;margin:.75rem 0 0}
+@media(max-width:600px){.qf-row{grid-template-columns:1fr}}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -324,6 +337,37 @@ footer a:hover{color:var(--copper)}
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       @turfliluxurylawns
     </a>
+  </div>
+</section>
+
+<section class="qf-sec" id="quote-form" aria-labelledby="qf-h">
+  <div class="qf-wrap">
+    <h2 class="qf-title" id="qf-h">Like What You See?</h2>
+    <p class="qf-sub">Tell us about your project and we'll call within 1 business hour.</p>
+    <form name="portfolio-quote" method="POST" action="/thanks/" netlify aria-label="Free quote request">
+      <input type="hidden" name="form-name" value="portfolio-quote">
+      <input type="hidden" name="source" value="site-portfolio">
+      <div class="qf-row">
+        <div class="qf-g">
+          <label for="portfolio-quote-fname">First Name</label>
+          <input type="text" id="portfolio-quote-fname" name="first-name" autocomplete="given-name" required>
+        </div>
+        <div class="qf-g">
+          <label for="portfolio-quote-phone">Phone Number</label>
+          <input type="tel" id="portfolio-quote-phone" name="phone" autocomplete="tel" required>
+        </div>
+      </div>
+      <div class="qf-g">
+        <label for="portfolio-quote-city">Your City / Neighborhood</label>
+        <input type="text" id="portfolio-quote-city" name="city" placeholder="e.g. Troon North, DC Ranch">
+      </div>
+      <div class="qf-g">
+        <label for="portfolio-quote-notes">Tell us about your project</label>
+        <textarea id="portfolio-quote-notes" name="notes" placeholder="Which project caught your eye? Approximate size, timeline..."></textarea>
+      </div>
+      <button type="submit" class="qf-btn">Get My Free Quote &rarr;</button>
+      <p class="qf-note">No spam. We'll call you within 1 business hour.</p>
+    </form>
   </div>
 </section>
 
