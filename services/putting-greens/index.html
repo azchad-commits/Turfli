@@ -307,5 +307,20 @@ footer{background:var(--charcoal-mid);padding:3.5rem 2.5rem 2rem}
     <div class="fbot"><p class="fcpy">© 2025 Turfli — Luxury Lawns and Greens LLC · Scottsdale, AZ · ROC Licensed &amp; Insured</p><div class="fleg"><a href="/privacy/">Privacy Policy</a></div></div>
   </div>
 </footer>
+<!-- Phone-tap conversion. 162 tel: links across the site previously fired nothing,
+     so phone leads were invisible to Google Ads and Meta. Delegated listener so every
+     tel: link is covered without touching them individually. Guarded with typeof checks
+     so pages without gtag/fbq (e.g. 404) stay safe. -->
+<script>
+document.addEventListener('click', function (e) {
+  var t = e.target;
+  var a = (t && t.closest) ? t.closest('a[href^="tel:"]') : null;
+  if (!a) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', { 'send_to': 'AW-11303366013/pL34CP7-8YIZEP3a7o0q' });
+  }
+  if (typeof fbq === 'function') { fbq('track', 'Contact'); }
+}, true);
+</script>
 </body>
 </html>
