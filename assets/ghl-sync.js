@@ -7,6 +7,13 @@
    GoHighLevel is unreachable the form still works and Netlify still
    stores the submission, so a lead can never be lost because of this.
 
+   WHY IT POSTS TO OUR OWN DOMAIN
+   The browser cannot post straight to GoHighLevel. A cross-site POST
+   with a JSON content type needs a permission check first, and the form
+   navigates to /thanks/ before that finishes, so the request is dropped
+   silently. Instead this posts to a small function on turfli.com, which
+   forwards it on server to server.
+
    PAYLOAD SHAPE
    The existing GoHighLevel workflow reads fields as
        inboundWebhookRequest.payload.data.<field>
@@ -20,9 +27,9 @@
 (function () {
   "use strict";
 
-  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/f5CR8vY1MBaywM65vzUF/webhook-trigger/X1PSEWaAbc47Kfh3SmWn";
+  var ENDPOINT = "/.netlify/functions/ghl-forward";
 
-  if (!WEBHOOK_URL) return;
+  if (!ENDPOINT) return;
 
   // field -> extra keys carrying the same value, so the workflow can
   // reference whichever spelling it was built against.
@@ -89,14 +96,14 @@
     }
 
     try {
-      fetch(WEBHOOK_URL, {
+      fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
         // keepalive lets the request finish after the browser has
         // already navigated to /thanks/.
         keepalive: true,
-        mode: "cors"
+        mode: "same-origin"
       }).catch(function () { /* silent: Netlify still holds the lead */ });
     } catch (e) { /* silent */ }
   }
