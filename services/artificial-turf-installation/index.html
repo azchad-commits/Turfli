@@ -179,9 +179,51 @@ a{color:inherit;text-decoration:none}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<style>
+/* Header promotion bar and phone, added 22 Oct 2026 */
+.tf-promo{background:#faf7f2;border-bottom:1px solid #e8dccb;text-align:center;
+  padding:.55rem 1rem;font-family:var(--font-body,'Jost',sans-serif);
+  font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;
+  font-weight:500;line-height:1.35}
+.tf-promo a{color:#b3261e;text-decoration:none;display:inline-block}
+.tf-promo a:hover{text-decoration:underline;text-underline-offset:3px}
+.tf-promo strong{font-weight:700;letter-spacing:.11em}
+.tf-promo-val{color:#8a5218;font-weight:400;letter-spacing:.06em}
+@media(max-width:600px){
+  .tf-promo{font-size:.7rem;padding:.5rem .75rem;letter-spacing:.06em}
+  .tf-promo-val{display:block;margin-top:.1rem}
+}
+/* phone in header */
+.nav-phone{font-size:1.06rem!important;font-weight:500!important;
+  color:#d4c4a8!important;letter-spacing:.03em!important}
+.nav-phone:hover{color:#fff!important}
+.tf-navphone{font-size:1.06rem;font-weight:500;color:var(--stone,#d4c4a8);
+  letter-spacing:.03em;white-space:nowrap;margin-left:auto;margin-right:1rem;
+  text-decoration:none}
+.tf-navphone:hover{color:#fff}
+.lp-nav-phone,.lp-phone{font-size:1.06rem!important}
+.lp-nav-phone strong,.lp-phone strong{font-size:1.06rem!important;font-weight:600!important}
+.site-nav .nav-links{margin-right:.5rem}
+@media(max-width:900px){
+  .tf-navphone{font-size:.98rem;margin-right:.6rem}
+}
+@media(max-width:600px){
+  .tf-navphone{font-size:.9rem;margin-right:.45rem;margin-left:auto}
+  .site-nav .nav-cta{padding:.42rem .62rem!important;font-size:.58rem!important;
+    letter-spacing:.05em!important}
+  .site-nav .nav-logo-text{font-size:1.2rem}
+  .site-nav{gap:.3rem}
+}
+@media(max-width:380px){
+  .tf-navphone{font-size:.82rem}
+  .site-nav .nav-cta{padding:.4rem .5rem!important;font-size:.54rem!important}
+}
+</style>
 </head>
 <body>
 
+<div class="tf-promo"><a href="/contact/"><strong>FREE</strong> 3D Design Consultation <span class="tf-promo-val">&mdash; $349 value</span></a></div>
 <nav class="site-nav" aria-label="Main navigation">
   <a href="/" class="nav-logo"><img src="/assets/flamingo-logo-copper.png" alt="" class="nav-logo-icon"><span class="nav-logo-text">Turfli<span>.</span></span></a>
   <div class="nav-links">
@@ -193,7 +235,7 @@ a{color:inherit;text-decoration:none}
     <a href="/portfolio/">Portfolio</a>
     <a href="/about-turfli-scottsdale/">About</a>
   </div>
-  <a href="/contact/" class="nav-cta">Free Quote</a>
+  <a href="tel:+14804050725" class="tf-navphone" aria-label="Call Turfli">(480) 405-0725</a><a href="/contact/" class="nav-cta">Free Quote</a>
 </nav>
 
 <header class="page-hero" aria-labelledby="page-h1">
@@ -400,5 +442,6 @@ document.addEventListener('click', function (e) {
   if (typeof fbq === 'function') { fbq('track', 'Contact'); }
 }, true);
 </script>
+<script src="/assets/ghl-sync.js" defer></script>
 </body>
 </html>
