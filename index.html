@@ -508,11 +508,19 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
   .trust-divider{display:none}
   body{padding-bottom:70px}
 }
-/* Turfli Design + Build logo refresh */
-.nav-logo-icon,.lp-logo-icon{height:2.55rem;width:auto;max-width:min(48vw,260px);object-fit:contain;display:block}
-.footer-logo-icon,.fb-icon{height:2rem;width:auto;max-width:220px;object-fit:contain;display:block}
+
+/* Turfli Design + Build brand refresh */
+.nav-logo-icon{height:2.55rem;width:auto;max-width:min(48vw,260px);object-fit:contain;display:block}
+.footer-logo-icon{height:2rem;width:auto;max-width:220px;object-fit:contain;display:block}
+.fb-icon{width:auto;height:2.2rem;max-width:190px;object-fit:contain}
+.portfolio-img,.ba-photo img,.svc-card img,.service-image img,.project-card img,.render-img{
+  border:1px solid rgba(179,130,76,.38);padding:5px;background:#fff;
+  border-radius:10px;box-shadow:0 5px 18px rgba(28,25,20,.12);
+}
+
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <style>
@@ -572,7 +580,7 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
 <nav role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Turfli — Luxury Outdoor Living">
-      <img src="/assets/turfli-design-build-white.png" alt="Turfli Design + Build" class="nav-logo-icon"></span>
+      <img src="/assets/turfli-design-build-black.png" alt="Turfli Design + Build" class="nav-logo-icon">
     </a>
     <div class="nav-links" role="list">
       <a href="#services" role="listitem">Services</a>
@@ -641,6 +649,46 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
     </div>
   </div>
 </section>
+
+<!-- REVIEWS -->
+<section class="reviews section" id="reviews" aria-labelledby="reviews-heading">
+  <div class="section-inner">
+    <p class="section-eyebrow">Google Reviews</p>
+    <h2 class="section-title" id="reviews-heading">100+ 5-Star Reviews. 5.0 Average.</h2>
+    <p class="section-sub">Real homeowners. Real projects. Real results across Scottsdale and the Phoenix metro.</p>
+    <div class="reviews-grid" role="list" aria-label="Customer testimonials">
+      <div class="review-card" role="listitem">
+        <p class="review-stars">★★★★★</p>
+        <p class="review-text">"The backyard is completely transformed. They designed the whole thing — paver patio, outdoor kitchen, pergola, and turf. Everything integrates perfectly and the quality is outstanding."</p>
+        <p class="review-author">Maria T. · McCormick Ranch, Scottsdale</p>
+      </div>
+      <div class="review-card" role="listitem">
+        <p class="review-stars">★★★★★</p>
+        <p class="review-text">"Karl walked us through every single decision. The crew was professional from day one. The patio looks better than anything in our neighborhood. Worth every penny."</p>
+        <p class="review-author">James &amp; Lisa H. · North Scottsdale</p>
+      </div>
+      <div class="review-card" role="listitem">
+        <p class="review-stars">★★★★★</p>
+        <p class="review-text">"We got quotes from four contractors. Turfli was the only one that came to the first meeting with actual design ideas. They clearly knew what they were doing."</p>
+        <p class="review-author">David R. · Paradise Valley</p>
+      </div>
+      <div class="review-card" role="listitem">
+        <p class="review-stars">★★★★★</p>
+        <p class="review-text">"The putting green looks incredible. My kids use it every day. Turfli handled the whole design from the initial sketch to the finishing touches. Couldn't be happier."</p>
+        <p class="review-author">Mike A. · Gainey Ranch, Scottsdale</p>
+      </div>
+      <div class="review-card" role="listitem">
+        <p class="review-stars">★★★★★</p>
+        <p class="review-text">"Our dogs destroyed every lawn we've ever had. The pet turf Turfli installed has been perfect — drains well, looks great, zero odor. They even helped with our HOA approval."</p>
+        <p class="review-author">Sarah K. · DC Ranch, Scottsdale</p>
+      </div>
+    </div>
+    <div class="reviews-cta">
+      <a href="https://g.page/r/Cba5OI_9eqqvEAE/review" target="_blank" rel="noopener">Read all 101 reviews on Google →</a>
+    </div>
+  </div>
+</section>
+
 
 <!-- TRUST BAR -->
 <div class="trust-bar" role="complementary" aria-label="Credentials">
@@ -857,7 +905,7 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
       </div>
       <div class="portfolio-item" role="listitem">
         <img class="portfolio-img"
-          src="/images/pavers-patios/Pavers (1).jpeg"
+          src="/images/pavers-patios/Pavers (2).jpeg"
           alt="Large travertine paver patio with fire pit — North Scottsdale project by Turfli" loading="lazy">
         <div class="portfolio-overlay">
           <p class="portfolio-project">North Scottsdale Paver Patio</p>
@@ -866,7 +914,7 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
       </div>
       <div class="portfolio-item" role="listitem">
         <img class="portfolio-img"
-          src="/images/outdoor-kitchens/1_15.jpg"
+          src="/images/outdoor-kitchens/lopesio-outdoor-kitchen.webp"
           alt="Custom outdoor kitchen island with built-in BBQ — Arcadia, Phoenix by Turfli" loading="lazy">
         <div class="portfolio-overlay">
           <p class="portfolio-project">Arcadia Outdoor Kitchen</p>
@@ -880,6 +928,30 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
         <div class="portfolio-overlay">
           <p class="portfolio-project">Paradise Valley Putting Green</p>
           <p class="portfolio-meta">Paradise Valley · Custom putting green · Premium turf surround</p>
+        </div>
+      </div>
+      <div class="portfolio-item" role="listitem">
+        <img class="portfolio-img" src="/images/backyard-remodels/lopesio-project-pool-patio.webp"
+          alt="Luxury backyard pool and patio project by Turfli" loading="lazy">
+        <div class="portfolio-overlay">
+          <p class="portfolio-project">Lopesio Pool &amp; Patio</p>
+          <p class="portfolio-meta">Scottsdale · Poolside entertaining · Premium outdoor living</p>
+        </div>
+      </div>
+      <div class="portfolio-item" role="listitem">
+        <img class="portfolio-img" src="/images/backyard-remodels/lopesio-project-pool-courtyard.webp"
+          alt="Luxury pool courtyard with paver paths and landscape design by Turfli" loading="lazy">
+        <div class="portfolio-overlay">
+          <p class="portfolio-project">Lopesio Pool Courtyard</p>
+          <p class="portfolio-meta">Scottsdale · Pool courtyard · Paver pathways</p>
+        </div>
+      </div>
+      <div class="portfolio-item" role="listitem">
+        <img class="portfolio-img" src="/images/backyard-remodels/lopesio-project-pool-entertaining.webp"
+          alt="Outdoor entertaining area with pool and landscape lighting by Turfli" loading="lazy">
+        <div class="portfolio-overlay">
+          <p class="portfolio-project">Lopesio Outdoor Living</p>
+          <p class="portfolio-meta">Scottsdale · Poolside entertaining · Landscape lighting</p>
         </div>
       </div>
       <div class="portfolio-item" role="listitem">
@@ -1012,44 +1084,7 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews section" id="reviews" aria-labelledby="reviews-heading">
-  <div class="section-inner">
-    <p class="section-eyebrow">Google Reviews</p>
-    <h2 class="section-title" id="reviews-heading">101 Reviews. 5.0 Average.</h2>
-    <p class="section-sub">Real homeowners. Real projects. Real results across Scottsdale and the Phoenix metro.</p>
-    <div class="reviews-grid" role="list" aria-label="Customer testimonials">
-      <div class="review-card" role="listitem">
-        <p class="review-stars">★★★★★</p>
-        <p class="review-text">"The backyard is completely transformed. They designed the whole thing — paver patio, outdoor kitchen, pergola, and turf. Everything integrates perfectly and the quality is outstanding."</p>
-        <p class="review-author">Maria T. · McCormick Ranch, Scottsdale</p>
-      </div>
-      <div class="review-card" role="listitem">
-        <p class="review-stars">★★★★★</p>
-        <p class="review-text">"Karl walked us through every single decision. The crew was professional from day one. The patio looks better than anything in our neighborhood. Worth every penny."</p>
-        <p class="review-author">James &amp; Lisa H. · North Scottsdale</p>
-      </div>
-      <div class="review-card" role="listitem">
-        <p class="review-stars">★★★★★</p>
-        <p class="review-text">"We got quotes from four contractors. Turfli was the only one that came to the first meeting with actual design ideas. They clearly knew what they were doing."</p>
-        <p class="review-author">David R. · Paradise Valley</p>
-      </div>
-      <div class="review-card" role="listitem">
-        <p class="review-stars">★★★★★</p>
-        <p class="review-text">"The putting green looks incredible. My kids use it every day. Turfli handled the whole design from the initial sketch to the finishing touches. Couldn't be happier."</p>
-        <p class="review-author">Mike A. · Gainey Ranch, Scottsdale</p>
-      </div>
-      <div class="review-card" role="listitem">
-        <p class="review-stars">★★★★★</p>
-        <p class="review-text">"Our dogs destroyed every lawn we've ever had. The pet turf Turfli installed has been perfect — drains well, looks great, zero odor. They even helped with our HOA approval."</p>
-        <p class="review-author">Sarah K. · DC Ranch, Scottsdale</p>
-      </div>
-    </div>
-    <div class="reviews-cta">
-      <a href="https://g.page/r/Cba5OI_9eqqvEAE/review" target="_blank" rel="noopener">Read all 101 reviews on Google →</a>
-    </div>
-  </div>
-</section>
+
 
 <!-- INSTAGRAM -->
 <section class="instagram" aria-labelledby="ig-heading">
@@ -1284,7 +1319,7 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
     <div class="footer-top">
       <div class="footer-brand">
         <a href="/" class="nav-logo" aria-label="Turfli home">
-      <img src="/assets/turfli-design-build-white.png" alt="Turfli Design + Build" class="nav-logo-icon"></span>
+      <img src="/assets/turfli-design-build-black.png" alt="Turfli Design + Build" class="nav-logo-icon">
     </a>
         <p>Design-build outdoor living contractor serving Scottsdale and the Phoenix metro. ROC licensed. BBB A+. Installation warranty.</p>
         <div class="footer-social" aria-label="Social media">
