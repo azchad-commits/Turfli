@@ -563,6 +563,27 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
   .site-nav .nav-cta{padding:.4rem .5rem!important;font-size:.54rem!important}
 }
 </style>
+
+<style>
+/* Compact lead CTA + on-demand GHL form popup */
+.contact-cta-card{width:100%;max-width:560px;margin:0 auto;padding:clamp(1.5rem,4vw,2.6rem);background:#f7f3ed;border:1px solid rgba(179,130,76,.28);border-radius:8px;text-align:center;box-shadow:0 12px 36px rgba(28,25,20,.08)}
+.contact-cta-mark{font-size:.65rem;letter-spacing:.22em;color:#a66a2d;font-weight:600;margin-bottom:.8rem}
+.contact-cta-card h3{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;color:#292722;margin:0 0 .7rem}
+.contact-cta-card>p{color:#6d675e;line-height:1.7;max-width:410px;margin:0 auto 1.4rem}
+.contact-open-form{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;padding:1rem 1.5rem;background:var(--copper);color:#fff;font:500 .78rem var(--font-body);letter-spacing:.1em;text-transform:uppercase;border-radius:3px;width:100%;max-width:360px}
+.contact-open-form:hover{background:var(--copper-dark)}
+.contact-call-link,.contact-instagram-link{display:block;margin-top:.85rem;color:#6d512f;font-size:.86rem;text-decoration:underline;text-underline-offset:3px}
+.contact-social-proof{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.35rem .65rem;margin:1.4rem 0 .8rem;padding-top:1.1rem;border-top:1px solid #e4d9ca;color:#50483e;font-size:.8rem}
+.contact-stars{color:#b77b36;letter-spacing:.12em;font-size:1rem}.contact-social-proof a{color:#8b5b2d;text-decoration:underline;text-underline-offset:3px}
+.project-form-dialog{width:min(720px,calc(100% - 24px));max-width:720px;max-height:92vh;padding:0;border:0;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.35);overflow:hidden;background:#fff}
+.project-form-dialog::backdrop{background:rgba(15,14,12,.72);backdrop-filter:blur(3px)}
+.project-form-dialog-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.25rem;background:#211f1b;color:#fff}
+.project-form-dialog-head .section-eyebrow{margin:0 0 .25rem;color:#d3a36d}.project-form-dialog-head h2{font-size:clamp(1.2rem,3vw,1.7rem);margin:0;color:#fff}
+.project-form-close{width:38px;height:38px;flex:0 0 38px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:transparent;color:#fff;font-size:1.6rem;line-height:1;cursor:pointer}
+.project-form-dialog iframe{height:min(1000px,calc(92vh - 82px))!important;overflow:auto}
+@media(max-width:700px){.contact-cta-card{padding:1.5rem 1rem}.project-form-dialog{width:calc(100% - 12px);max-height:96vh}.project-form-dialog iframe{height:calc(96vh - 82px)!important}.contact-social-proof{flex-direction:column;gap:.3rem}}
+</style>
+
 </head>
 <body>
 
@@ -580,7 +601,7 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
 <nav role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Turfli — Luxury Outdoor Living">
-      <img src="/assets/turfli-design-build-black.png" alt="Turfli Design + Build" class="nav-logo-icon">
+      <img src="/assets/turfli-design-build-white.png" alt="Turfli Design + Build" class="nav-logo-icon">
     </a>
     <div class="nav-links" role="list">
       <a href="#services" role="listitem">Services</a>
@@ -1287,30 +1308,32 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
         </a>
       </div>
     </div>
-    <div class="ghl-form-embed" style="width:100%;max-width:100%;min-width:0;overflow:hidden;border-radius:8px;">
-  <iframe
-    src="https://link.turfli.com/widget/form/k3pvEddPZEScweioKM21"
-    style="width:100%;height:884px;border:0;border-radius:8px;display:block;background:transparent;"
-    id="inline-k3pvEddPZEScweioKM21"
-    data-layout="{'id':'INLINE'}"
-    data-trigger-type="alwaysShow"
-    data-trigger-value=""
-    data-activation-type="alwaysActivated"
-    data-activation-value=""
-    data-deactivation-type="neverDeactivate"
-    data-deactivation-value=""
-    data-form-name="Turfli Website Lead Form"
-    data-height="884"
-    data-layout-iframe-id="inline-k3pvEddPZEScweioKM21"
-    data-form-id="k3pvEddPZEScweioKM21"
-    data-cookie-consent="true"
-    data-cookie-consent-provider="auto"
-    title="Turfli Website Lead Form"
-    loading="eager" decoding="async">>
-  </iframe>
-</div>
-<script src="https://link.turfli.com/js/form_embed.js"></script>
-  </div>
+    <div class="contact-cta-card">
+      <div class="contact-cta-mark">TURFLI · DESIGN + BUILD</div>
+      <h3>Let’s Plan Your Outdoor Space</h3>
+      <p>Tell us a little about your project and our team will help you take the next step.</p>
+      <button class="btn-primary contact-open-form" type="button" data-open-project-form>Get Your Free Design Assessment</button>
+      <a class="contact-call-link" href="tel:+14804050725">Or call (480) 405-0725</a>
+      <div class="contact-social-proof">
+        <span class="contact-stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <strong>5.0 average · 100+ 5-star reviews</strong>
+        <a href="#reviews">Read customer reviews</a>
+      </div>
+      <a class="contact-instagram-link" href="https://www.instagram.com/turfliluxurylawns" target="_blank" rel="noopener">See our latest outdoor projects on Instagram ↗</a>
+    </div>
+
+    <dialog class="project-form-dialog" id="project-form-dialog" aria-labelledby="project-form-title">
+      <div class="project-form-dialog-head">
+        <div><p class="section-eyebrow">Start your project</p><h2 id="project-form-title">Request Your Free Design Assessment</h2></div>
+        <button class="project-form-close" type="button" aria-label="Close form" data-close-project-form>×</button>
+      </div>
+      <iframe
+        data-src="https://link.turfli.com/widget/form/k3pvEddPZEScweioKM21"
+        title="Turfli Website Lead Form"
+        loading="lazy"
+        style="width:100%;height:1000px;border:0;border-radius:8px;display:block;background:transparent;"
+        id="popup-k3pvEddPZEScweioKM21"></iframe>
+    </dialog>  </div>
 </section>
 
 <!-- FOOTER -->
@@ -1319,7 +1342,7 @@ footer{background:var(--charcoal-mid);border-top:1px solid rgba(212,196,168,.07)
     <div class="footer-top">
       <div class="footer-brand">
         <a href="/" class="nav-logo" aria-label="Turfli home">
-      <img src="/assets/turfli-design-build-black.png" alt="Turfli Design + Build" class="nav-logo-icon">
+      <img src="/assets/turfli-design-build-white.png" alt="Turfli Design + Build" class="nav-logo-icon">
     </a>
         <p>Design-build outdoor living contractor serving Scottsdale and the Phoenix metro. ROC licensed. BBB A+. Installation warranty.</p>
         <div class="footer-social" aria-label="Social media">
@@ -1450,5 +1473,24 @@ document.addEventListener('click', function (e) {
 }, true);
 </script>
 <script src="/assets/ghl-sync.js" defer></script>
+
+<script>
+(function(){
+  const dialog=document.getElementById('project-form-dialog');
+  if(!dialog) return;
+  const frame=dialog.querySelector('iframe[data-src]');
+  document.querySelectorAll('[data-open-project-form]').forEach(btn=>btn.addEventListener('click',()=>{
+    if(frame && !frame.src) frame.src=frame.dataset.src;
+    if(typeof dialog.showModal==='function') dialog.showModal();
+    else dialog.setAttribute('open','');
+    document.body.classList.add('project-form-open');
+  }));
+  function close(){ if(dialog.open && typeof dialog.close==='function') dialog.close(); else dialog.removeAttribute('open'); document.body.classList.remove('project-form-open'); }
+  dialog.querySelectorAll('[data-close-project-form]').forEach(btn=>btn.addEventListener('click',close));
+  dialog.addEventListener('click',e=>{if(e.target===dialog) close();});
+  dialog.addEventListener('close',()=>document.body.classList.remove('project-form-open'));
+})();
+</script>
+
 </body>
 </html>
