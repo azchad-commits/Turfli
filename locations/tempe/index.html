@@ -33,11 +33,11 @@
     .topbar{background:var(--charcoal);color:var(--stone-light);font-size:12px;letter-spacing:.08em;padding:8px 0;text-align:center}
     .site-nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--charcoal);padding:0 max(20px,calc((100% - 1160px)/2));border-bottom:1px solid rgba(212,196,168,.12);position:relative;z-index:5}
     .brand{font-family:var(--serif);font-weight:600;font-size:32px;letter-spacing:.13em;text-decoration:none;line-height:1;color:var(--stone)}
-    .brand small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:.22em;font-weight:500;text-align:center;margin-top:5px;color:var(--stone-light)}
+    .brand-image{display:flex;align-items:center;flex:0 0 auto}.brand-image img{width:205px;height:auto;max-height:64px;object-fit:contain}.brand small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:.22em;font-weight:500;text-align:center;margin-top:5px;color:var(--stone-light)}
     .nav-links{display:flex;align-items:center;gap:27px;font-size:13px} .nav-links a{text-decoration:none;color:var(--stone-light)} .nav-links a:hover{color:var(--copper-light)}
     .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--copper);color:#fff;text-decoration:none;padding:13px 22px;border-radius:3px;font-size:12px;font-weight:600;letter-spacing:.06em;transition:.2s}
     .btn:hover{background:var(--copper-dark);transform:translateY(-1px)} .btn.light{background:var(--stone-light);color:var(--charcoal)} .btn.outline{background:transparent;border:1px solid rgba(242,236,224,.8);color:#fff}
-    .hero{min-height:570px;display:flex;align-items:center;color:#fff;position:relative;background:linear-gradient(90deg,rgba(28,26,23,.88),rgba(28,26,23,.55) 54%,rgba(28,26,23,.12)),url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat}
+    .hero{min-height:570px;display:flex;align-items:center;color:#fff;position:relative;background:linear-gradient(90deg,rgba(28,26,23,.88),rgba(28,26,23,.55) 54%,rgba(28,26,23,.12)),url("../../images/backyard-remodels/full-remodel-turf-patio.jpeg") center/cover no-repeat}
     .hero-content{max-width:720px;padding:90px 0} .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:10px;font-weight:600;color:var(--stone)}
     h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;margin:0} h1{font-size:clamp(48px,6vw,76px);margin:18px 0 20px;max-width:760px} .hero p{font-size:17px;max-width:600px;color:#f0f0e9;margin:0 0 30px}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap} .trust-row{display:flex;gap:28px;flex-wrap:wrap;margin-top:45px;font-size:12px;color:#f1f0e9}
@@ -52,7 +52,7 @@
     .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px} .process-item{border-top:1px solid var(--line);padding-top:20px} .process-num{font-family:var(--serif);font-size:42px;color:var(--copper-light)} .process-item h3{font-size:24px;margin:8px 0} .process-item p{color:var(--muted);font-size:13px;margin:0}
     .gallery-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px} .gallery-grid img{width:100%;height:260px;object-fit:cover;border-radius:3px} .gallery-grid img:first-child{height:100%;min-height:260px;grid-row:span 2}
     .faq-section{background:var(--stone-pale)} .faq-list{max-width:850px;margin:auto} details{background:#fff;border:1px solid var(--line);padding:18px 22px;margin:10px 0} summary{cursor:pointer;font-weight:600;font-size:15px} details p{color:var(--muted);font-size:14px;margin:14px 0 0}
-    .cta-section{background:linear-gradient(100deg,rgba(28,26,23,.94),rgba(46,43,37,.78)),url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85") center/cover;color:#fff;text-align:center;padding:82px 20px} .cta-section h2{max-width:760px;margin:12px auto 16px} .cta-section p{color:#e5e9e1;max-width:650px;margin:0 auto 26px}
+    .cta-section{background:linear-gradient(100deg,rgba(28,26,23,.94),rgba(46,43,37,.78)),url("../../images/backyard-remodels/3d-rendering-pool-pergola.jpg") center/cover;color:#fff;text-align:center;padding:82px 20px} .cta-section h2{max-width:760px;margin:12px auto 16px} .cta-section p{color:#e5e9e1;max-width:650px;margin:0 auto 26px}
     footer{background:var(--charcoal-mid);color:var(--stone-light);padding:56px 0 24px} .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px} footer h3{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#fff;margin-bottom:15px} footer p,footer a{font-size:13px;color:#d4c4a8} footer a{text-decoration:none} footer a:hover{color:#fff} .footer-links{display:grid;gap:8px} .footer-bottom{border-top:1px solid #343b33;margin-top:38px;padding-top:20px;font-size:11px;color:#b7a991;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .mobile-cta{display:none}
     @media(max-width:850px){.nav-links{gap:14px}.nav-links a:not(.btn){display:none}.hero{min-height:540px;background-position:60% center}.intro-grid{grid-template-columns:1fr;gap:32px}.intro-image{height:340px}.service-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img:first-child{grid-row:auto;height:260px}.feature-grid{grid-template-columns:1fr}}
@@ -88,7 +88,7 @@
 <body>
   <div class="topbar">SCOTTSDALE &amp; THE GREATER PHOENIX VALLEY · ROC LICENSED #353675</div>
   <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="https://turfli.com/" aria-label="Turfli home">TURFLI<small>LUXURY LAWNS &amp; OUTDOOR LIVING</small></a>
+    <a class="brand brand-image" href="https://turfli.com/" aria-label="Turfli home"><img src="/assets/turfli-design-build-white.png" alt="Turfli Design + Build"></a>
     <div class="nav-links">
       <a href="/">Home</a><a href="/services/">Services</a><a href="/locations/">Locations</a><a href="/portfolio/">Gallery</a><a href="/about-turfli-scottsdale/">About</a>
       <a class="btn" href="/contact/">Free Assessment</a>
@@ -108,7 +108,7 @@
 
     <section>
       <div class="container intro-grid">
-        <img class="intro-image" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Custom outdoor living space inspiration for a Tempe, Arizona home" loading="lazy">
+        <img class="intro-image" src="../../images/backyard-remodels/lopesio-project-pool-patio.webp" alt="Custom outdoor living space inspiration for a Tempe, Arizona home" loading="lazy">
         <div class="intro-copy">
           <div class="kicker">Made for Tempe living</div>
           <h2>Outdoor Living Designed Around Your Tempe Home</h2>
@@ -159,11 +159,11 @@
       <div class="container">
         <div class="section-head"><div class="kicker">Outdoor inspiration</div><h2>Ideas for Your Next Backyard Project</h2><p>Explore a few of the elements that can transform an ordinary yard into a more useful, welcoming outdoor space.</p></div>
         <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="Luxury backyard landscaping and patio inspiration for Tempe, Arizona" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Modern paver patio and outdoor seating area" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Artificial turf and desert-friendly backyard landscaping" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=900&q=85" alt="Outdoor kitchen and shaded entertaining space" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Custom putting green in a residential backyard" loading="lazy">
+          <img src="../../images/backyard-remodels/full-remodel-turf-yard.jpeg" alt="Luxury backyard landscaping and patio inspiration for Tempe, Arizona" loading="lazy">
+          <img src="../../images/backyard-remodels/3d-rendering-pool-pergola.jpg" alt="Modern paver patio and outdoor seating area" loading="lazy">
+          <img src="../../images/backyard-remodels/full-remodel-fire-pit-cabana.jpeg" alt="Artificial turf and desert-friendly backyard landscaping" loading="lazy">
+          <img src="../../images/artificial-turf/backyard-turf-pool-putting-green.jpg" alt="Outdoor kitchen and shaded entertaining space" loading="lazy">
+          <img src="../../images/backyard-remodels/lopesio-project-pool-courtyard.webp" alt="Custom putting green in a residential backyard" loading="lazy">
         </div>
       </div>
     </section>
